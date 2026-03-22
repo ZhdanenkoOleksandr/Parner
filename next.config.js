@@ -10,7 +10,6 @@ const nextConfig = {
   i18n: {
     locales: ['uk', 'en', 'ru'],
     defaultLocale: 'uk',
-    localeDetection: true,
   },
   
   // Настройки для Vercel

@@ -133,9 +133,9 @@ function useReveal(){
 
 /* ─────────── NAV SCROLL HOOK ─────────── */
 function useScrolled(threshold = 40) {
-  const [scrolled, setScrolled] = React.useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > threshold);
     };
@@ -150,73 +150,6 @@ function useScrolled(threshold = 40) {
   return scrolled;
 }
 
-/* ─────────── NAV COMPONENT ─────────── */
-function Nav({ page, setPage }) {
-  const scrolled = useScrolled();
-  const [menuOpen, setMenuOpen] = useMobileMenu();
-  const [lang, setLang, t] = useLanguage();
-
-  return (
-    <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
-      
-      <div className="nav-brand">
-        Bitbon System
-      </div>
-
-      {/* Переключатель языка */}
-      <LanguageSwitcher lang={lang} setLang={setLang} />
-
-      <div className="nav-links">
-        <a onClick={() => setPage('system')}>
-          {t.nav.system}
-        </a>
-
-        <a onClick={() => setPage('token')}>
-          {t.nav.token}
-        </a>
-
-        <a onClick={() => setPage('about')}>
-          {t.nav.about}
-        </a>
-
-        <a onClick={() => setPage('contact')}>
-          {t.nav.contact}
-        </a>
-      </div>
-
-    </nav>
-  );
-}
-// ============= 2. LANGUAGE HOOK (добавьте после других hooks) =============
- 
-function useLanguage() {
-  const [lang, setLang] = useState(() => {
-    // Check URL parameter first
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    if (urlLang && ['uk', 'en', 'ru'].includes(urlLang)) return urlLang;
-    
-    // Check localStorage
-    const saved = localStorage.getItem('preferred-language');
-    if (saved && ['uk', 'en', 'ru'].includes(saved)) return saved;
-    
-    // Detect browser language
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('uk')) return 'uk';
-    if (browserLang.startsWith('ru')) return 'ru';
-    return 'uk'; // Default to Ukrainian
-  });
-  
-  useEffect(() => {
-    localStorage.setItem('preferred-language', lang);
-    // Update document lang attribute for accessibility
-    document.documentElement.lang = lang;
-  }, [lang]);
-  
-  const t = translations[lang];
-  
-  return [lang, setLang, t];
-}
 /* ─────────── ANIMATED COUNTER ─────────── */
 function AnimCounter({to,suffix='',duration=1600}){
   const [val,setVal]=useState(0);
@@ -237,38 +170,7 @@ function AnimCounter({to,suffix='',duration=1600}){
   },[vis,to,duration]);
   return <span ref={ref}>{val.toLocaleString()}{suffix}</span>;
 }
-// ============= 3. LANGUAGE SWITCHER COMPONENT =============
- 
-function LanguageSwitcher({lang, setLang}) {
-  const flags = {
-    uk: '🇺🇦',
-    en: '🇬🇧',
-    ru: '🇷🇺'
-  };
-  
-  const names = {
-    uk: 'UA',
-    en: 'EN',
-    ru: 'RU'
-  };
-  
-  return (
-    <div className="lang-switcher">
-      {['uk', 'en', 'ru'].map(l => (
-        <button
-          key={l}
-          className={`lang-btn ${lang === l ? 'active' : ''}`}
-          onClick={() => setLang(l)}
-          aria-label={`Switch to ${names[l]}`}
-          title={names[l]}
-        >
-          <span className="lang-flag">{flags[l]}</span>
-          <span className="lang-code">{names[l]}</span>
-        </button>
-      ))}
-    </div>
-  );
-}
+
 /* ─────────── MOBILE MENU HOOK ─────────── */
 function useMobileMenu(){
   const [open,setOpen]=useState(false);
@@ -304,9 +206,8 @@ const G = `
     --space-lg:32px;
     --space-xl:48px;
     --space-2xl:64px;
-    // ============= 4. STYLES (добавьте в CSS секцию) =============
- 
-const LANG_STYLES = `
+    --touch-min:44px;
+  }
   /* Language Switcher - Desktop & Mobile */
   .lang-switcher {
     display: flex;
@@ -400,10 +301,6 @@ const LANG_STYLES = `
       scale: 0.85;
       right: 65px;
     }
-  }
-`;
-    /* Touch Targets */
-    --touch-min:44px;
   }
   html{scroll-behavior:smooth}
   *,*::before,*::after{
@@ -5059,22 +4956,6 @@ function Web4Page({setPage}){
 
       </div>
     </>
-  );
-}
-
-/* ── KPI PROGRESS BAR COMPONENT ── */
-function KpiBar({label, value, percent}){
-  const [ref,vis] = useReveal();
-  return(
-    <div className="kpi-bar-item" ref={ref}>
-      <div className="kpi-bar-header">
-        <span className="kpi-bar-label">{label}</span>
-        <span className="kpi-bar-val">{value}</span>
-      </div>
-      <div className="kpi-bar-track">
-        <div className="kpi-bar-fill" style={{width: vis ? `${percent}%` : '0%'}}/>
-      </div>
-    </div>
   );
 }
 
