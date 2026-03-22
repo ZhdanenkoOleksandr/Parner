@@ -1,0 +1,16 @@
+{
+  "name": "Web 4.0 Bitbon System",
+  "short_name": "Bitbon",
+  "description": "Platform for digital transformation and tokenization",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#38b6ff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
