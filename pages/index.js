@@ -10,7 +10,8 @@ const translations = {
       metaresources: "Метаресурси",
       cases: "Web4 Кейси",
       contact: "Контакт",
-      consultation: "Консультація"
+      consultation: "Консультація",
+      consultationFooter: "Консультація"
     },
     form: {
       name: { label: "Ім'я *", placeholder: "Ваше ім'я" },
@@ -48,7 +49,8 @@ const translations = {
       metaresources: "Metaresources",
       cases: "Web4 Cases",
       contact: "Contact",
-      consultation: "Consultation"
+      consultation: "Consultation",
+      consultationFooter: "Consultation"
     },
     form: {
       name: { label: "Name *", placeholder: "Your name" },
@@ -86,7 +88,8 @@ const translations = {
       metaresources: "Метаресурсы",
       cases: "Web4 Кейсы",
       contact: "Контакт",
-      consultation: "Консультация"
+      consultation: "Консультация",
+      consultationFooter: "Консультация"
     },
     form: {
       name: { label: "Имя *", placeholder: "Ваше имя" },
@@ -3645,16 +3648,24 @@ function PersonalBrandBlock({setPage}){
 }
 
 const PAGES = ['home','system','token','onespace','cases','metaresources','contact'];
-const PAGE_LABELS = {
-  home:'Головна',system:'Система Bitbon',token:'Цифровий актив Bitbon',
-  onespace:'OneSpace',metaresources:'Метаресурсы',cases:'Web 4.0',contact:'Контакт'
+const PAGE_LABELS_BY_LANG = {
+  uk: { home:'Головна', system:'Система', token:'Токен', onespace:'OneSpace', metaresources:'Метаресурси', cases:'Web4 Кейси', contact:'Контакт' },
+  en: { home:'Home', system:'System', token:'Token', onespace:'OneSpace', metaresources:'Metaresources', cases:'Web4 Cases', contact:'Contact' },
+  ru: { home:'Главная', system:'Система', token:'Токен', onespace:'OneSpace', metaresources:'Метаресурсы', cases:'Web4 Кейсы', contact:'Контакт' },
 };
+const LANGS = [
+  { code:'uk', flag:'🇺🇦', label:'UA' },
+  { code:'en', flag:'🇬🇧', label:'EN' },
+  { code:'ru', flag:'🇷🇺', label:'RU' },
+];
 
 /* ─── COMPONENTS ─── */
 
-function Nav({page,setPage}){
+function Nav({page,setPage,lang,setLang}){
   const scrolled = useScrolled();
   const [mobileMenuOpen,setMobileMenuOpen]=useMobileMenu();
+  const PAGE_LABELS = PAGE_LABELS_BY_LANG[lang] || PAGE_LABELS_BY_LANG.uk;
+  const t = translations[lang] || translations.uk;
   return(
     <>
     <nav className={`nav${scrolled?' scrolled':''}`}>
@@ -3665,8 +3676,8 @@ function Nav({page,setPage}){
         </div>
         <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:4,lineHeight:1}}>ПАРТНЕР</div>
       </div>
-      
-        <button 
+
+        <button
           className={`nav-toggle ${mobileMenuOpen?'open':''}`}
           onClick={()=>setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -3675,7 +3686,16 @@ function Nav({page,setPage}){
           <span></span>
           <span></span>
         </button>
-        
+
+        <div className="lang-switcher">
+          {LANGS.map(l=>(
+            <button key={l.code} className={`lang-btn${lang===l.code?' active':''}`} onClick={()=>setLang(l.code)}>
+              <span className="lang-flag">{l.flag}</span>
+              <span className="lang-code">{l.label}</span>
+            </button>
+          ))}
+        </div>
+
         <div className={`nav-links ${mobileMenuOpen?'open':''}`}>
         {PAGES.filter(p=>p!=='home').map(p=>(
           <span key={p} className={`nav-link${page===p?' active':''}`} onClick={()=>{setPage(p);setMobileMenuOpen(false);}}>
@@ -3688,7 +3708,7 @@ function Nav({page,setPage}){
           Oleksandr Zhdanenko
         </div>
         <div style={{marginTop:4,display:'flex',justifyContent:'flex-end'}}>
-          <button className="nav-cta" onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>Консультація</button>
+          <button className="nav-cta" onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>{t.nav.consultation}</button>
         </div>
       </div>
     </nav>
@@ -5283,7 +5303,8 @@ function MetaresourcesPage({setPage}){
 }
 
 /* ═══════════ CONTACT PAGE (MERGED: ABOUT + CONTACT) ═══════════ */
-function ContactPage({setPage, showToast}){
+function ContactPage({setPage, showToast, lang='uk'}){
+  const t = translations[lang] || translations.uk;
   const [form,setForm] = useState({name:'',phone:'',telegram:'',userType:'',message:''});
   const [errors,setErrors] = useState({});
   const [sent,setSent] = useState(false);
@@ -5548,46 +5569,46 @@ function ContactPage({setPage, showToast}){
             )}
             <div className="cp-form-grid">
               <div className={`cp-f-group ${errors.name?'cp-f-error':''}`}>
-                <label className="cp-f-label">Ім'я *</label>
-                <input className="cp-f-input" value={form.name} onChange={update('name')} placeholder="Ваше ім'я"/>
+                <label className="cp-f-label">{t.form.name.label}</label>
+                <input className="cp-f-input" value={form.name} onChange={update('name')} placeholder={t.form.name.placeholder}/>
               </div>
-              
+
               <div className={`cp-f-group ${errors.userType?'cp-f-error':''}`}>
-                <label className="cp-f-label">Хто ви? *</label>
+                <label className="cp-f-label">{t.form.userType.label}</label>
                 <select className="cp-f-input cp-f-select" value={form.userType} onChange={update('userType')}>
-                  <option value="">Оберіть варіант</option>
-                  <option value="investor">Інвестор</option>
-                  <option value="business">Бізнес (постачальник товарів та послуг)</option>
-                  <option value="partner">Партнер системи</option>
-                  <option value="user">Користувач (інтерес до товарів та сервісів Web4)</option>
+                  <option value="">{t.form.userType.placeholder}</option>
+                  <option value="investor">{t.form.userType.investor}</option>
+                  <option value="business">{t.form.userType.business}</option>
+                  <option value="partner">{t.form.userType.partner}</option>
+                  <option value="user">{t.form.userType.user}</option>
                 </select>
               </div>
-              
+
               <div className={`cp-f-group ${errors.contact?'cp-f-error':''}`}>
-                <label className="cp-f-label">Телефон</label>
-                <input className="cp-f-input" value={form.phone} onChange={update('phone')} placeholder="+380 XX XXX XXXX" type="tel"/>
-                {errors.contact && <div className="cp-f-hint">Вкажіть телефон або Telegram</div>}
+                <label className="cp-f-label">{t.form.phone.label}</label>
+                <input className="cp-f-input" value={form.phone} onChange={update('phone')} placeholder={t.form.phone.placeholder} type="tel"/>
+                {errors.contact && <div className="cp-f-hint">{t.form.phone.hint}</div>}
               </div>
-              
+
               <div className={`cp-f-group ${errors.contact?'cp-f-error':''}`}>
-                <label className="cp-f-label">Telegram</label>
-                <input className="cp-f-input" value={form.telegram} onChange={update('telegram')} placeholder="@username"/>
+                <label className="cp-f-label">{t.form.telegram.label}</label>
+                <input className="cp-f-input" value={form.telegram} onChange={update('telegram')} placeholder={t.form.telegram.placeholder}/>
               </div>
-              
+
               <div className="cp-f-group cp-f-full">
-                <label className="cp-f-label">Повідомлення</label>
-                <textarea className="cp-f-input cp-f-textarea" value={form.message} onChange={update('message')} placeholder="Опишіть ваше питання або тему для обговорення..." rows="4"/>
+                <label className="cp-f-label">{t.form.message.label}</label>
+                <textarea className="cp-f-input cp-f-textarea" value={form.message} onChange={update('message')} placeholder={t.form.message.placeholder} rows="4"/>
               </div>
             </div>
             <button className="cp-f-submit" onClick={submit} disabled={submitting}>
-              {submitting ? 'Відправка...' : 'Надіслати заявку'}
+              {submitting ? t.form.submitting : t.form.submit}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
 
           <div className="cp-form-quote">
-            <div className="cp-quote-text">"Найкращий час для входу в трансформаційну технологію — на старті. Другий найкращий час — зараз."</div>
-            <div className="cp-quote-author">— Олександр Жданенко</div>
+            <div className="cp-quote-text">"{t.contact.quote.text}"</div>
+            <div className="cp-quote-author">{t.contact.quote.author}</div>
           </div>
         </div>
       </section>
@@ -5600,20 +5621,23 @@ function ContactPage({setPage, showToast}){
 export default function App(){
   const [page,setPage]=useState('home');
   const [toast,setToast]=useState(false);
+  const [lang,setLang]=useState('uk');
 
   function goTo(p){setPage(p);window.scrollTo({top:0,behavior:'smooth'});}
   function showToast(){setToast(true);setTimeout(()=>setToast(false),3500);}
 
+  const t = translations[lang] || translations.uk;
+
   const renderPage=()=>{
     switch(page){
-      case 'home': return <HomePage setPage={goTo}/>;
-      case 'system': return <SystemPage/>;
-      case 'token': return <TokenPage setPage={goTo}/>;
-      case 'onespace': return <OneSpacePage/>;
-      case 'metaresources': return <MetaresourcesPage setPage={goTo}/>;
-      case 'cases': return <Web4Page setPage={goTo}/>;
-      case 'contact': return <ContactPage setPage={goTo} showToast={showToast}/>;
-      default: return <HomePage setPage={goTo}/>;
+      case 'home': return <HomePage setPage={goTo} lang={lang}/>;
+      case 'system': return <SystemPage lang={lang}/>;
+      case 'token': return <TokenPage setPage={goTo} lang={lang}/>;
+      case 'onespace': return <OneSpacePage lang={lang}/>;
+      case 'metaresources': return <MetaresourcesPage setPage={goTo} lang={lang}/>;
+      case 'cases': return <Web4Page setPage={goTo} lang={lang}/>;
+      case 'contact': return <ContactPage setPage={goTo} showToast={showToast} lang={lang}/>;
+      default: return <HomePage setPage={goTo} lang={lang}/>;
     }
   };
 
@@ -5621,7 +5645,7 @@ export default function App(){
     <>
       <style>{G}</style>
       <div className="grid-bg"/>
-      <Nav page={page} setPage={goTo}/>
+      <Nav page={page} setPage={goTo} lang={lang} setLang={setLang}/>
       <div style={{paddingTop:34}}>
         {renderPage()}
       </div>
@@ -5638,11 +5662,11 @@ export default function App(){
             Oleksandr Zhdanenko
           </div>
           <div style={{marginTop:6,display:'flex',justifyContent:'flex-end'}}>
-            <button className="nav-cta" onClick={()=>goTo('contact')}>Консультація</button>
+            <button className="nav-cta" onClick={()=>goTo('contact')}>{t.nav.consultation}</button>
           </div>
         </div>
       </footer>
-      <div className={`toast${toast?' show':''}`}>✓ Заявку надіслано! Очікуйте зв'язку.</div>
+      <div className={`toast${toast?' show':''}`}>✓ {t.form.success}</div>
     </>
   );
 }
