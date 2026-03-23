@@ -2538,7 +2538,7 @@ const G = `
 
   /* ═══════ PERSONAL BRAND — ECONOMIC IDENTITY ═══════ */
   .pb-section{
-    position:relative;overflow:visible;
+    position:relative;overflow:hidden;
     padding:100px 48px 110px;
     background:
       radial-gradient(ellipse 70% 55% at 50% 30%,rgba(240,165,0,.06) 0%,transparent 70%),
@@ -2764,7 +2764,7 @@ const G = `
   }
   @media(max-width:680px){
     .pb-section{padding:60px 16px 80px}
-    .pb-orbit-wrap{width:340px;height:340px}
+    .pb-orbit-wrap{width:min(340px,100%);height:min(340px,100vw)}
     .pb-core{width:130px;height:130px}
     .pb-core-icon{width:56px;height:58px}
     .pb-core-name{font-size:16px;letter-spacing:3px}
@@ -4112,7 +4112,7 @@ function OneSpacePage(){
       <div style={{
         background:'linear-gradient(135deg, rgba(56,182,255,.06) 0%, rgba(123,92,250,.06) 100%)',
         border:'1px solid rgba(56,182,255,.18)',
-        padding:'40px 48px',
+        padding:'40px clamp(20px,5vw,48px)',
         marginTop:60,
         position:'relative',
         overflow:'hidden'
@@ -4161,7 +4161,7 @@ function OneSpacePage(){
       <hr className="divider"/>
 
       {/* CONSTRUCTOR METARESOURCES */}
-      <div className="grid-2" style={{padding:'0 48px 90px',maxWidth:1320,margin:'0 auto'}}>
+      <div className="grid-2" style={{padding:'0 clamp(20px,5vw,48px) 90px',maxWidth:1320,margin:'0 auto'}}>
         {/* Mobile app */}
         <div style={{background:'var(--surf)',border:'1px solid var(--bord)',padding:32}}>
           <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:24,marginBottom:24}}>
@@ -4216,7 +4216,7 @@ function OneSpacePage(){
 
         {/* ══════ ACADEMY OF PLATFORM-BASED ECONOMY - CENTERED ══════ */}
         <div style={{maxWidth:1100,margin:'0 auto'}}>
-        <div style={{background:'var(--surf)',border:'1px solid var(--bord)',padding:'40px 36px'}}>
+        <div style={{background:'var(--surf)',border:'1px solid var(--bord)',padding:'40px clamp(16px,4vw,36px)'}}>
           <div style={{marginBottom:40}}>
             <div style={{marginBottom:12}}>
               <div style={{fontSize:11,fontFamily:"'JetBrains Mono',monospace",color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',fontWeight:700}}>▸ ОСВІТА · WEB 4.0</div>
