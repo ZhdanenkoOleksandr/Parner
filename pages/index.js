@@ -204,6 +204,7 @@ const G = `
   .nav-cta:hover{transform:translateY(-2px);filter:brightness(1.1);
     box-shadow:0 6px 28px rgba(56,182,255,.4)}
 
+  @media(max-width:768px){:root{--muted:#4b6b87}}
 
   @media(max-width:768px){
     .nav{padding:10px var(--space-md)}
