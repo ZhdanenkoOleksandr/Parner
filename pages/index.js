@@ -126,12 +126,21 @@ const G = `
     justify-content:space-between;
     padding:12px var(--space-md);
     min-height:64px;
+    gap:0;
+    isolation:isolate;
+  }
+  .nav::before{
+    content:'';
+    position:absolute;
+    inset:0;
     background:rgba(5,8,16,.88);
     backdrop-filter:blur(24px) saturate(160%);
     -webkit-backdrop-filter:blur(24px) saturate(160%);
-    border-bottom:1px solid var(--bord);gap:0;
-    transition:background .4s,box-shadow .4s}
-  .nav.scrolled{background:rgba(5,8,16,.97);box-shadow:0 4px 40px rgba(0,0,0,.6),0 1px 0 rgba(56,182,255,.08)}
+    border-bottom:1px solid var(--bord);
+    transition:background .4s,box-shadow .4s;
+    z-index:-1;
+  }
+  .nav.scrolled::before{background:rgba(5,8,16,.97);box-shadow:0 4px 40px rgba(0,0,0,.6),0 1px 0 rgba(56,182,255,.08)}
   .nav-brand{cursor:pointer}
   .nav-logo{font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:3px;color:var(--white)}
   .nav-sub{font-size:10px;color:var(--muted);letter-spacing:2px;font-family:'JetBrains Mono',monospace}
@@ -687,6 +696,22 @@ const G = `
     letter-spacing:2px;margin-bottom:6px}
   .tl-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px}
   .tl-text{font-size:13px;color:var(--muted);line-height:1.65}
+
+  /* ── STATS STRIP ── */
+  .stats-strip{
+    background:linear-gradient(180deg,var(--surf) 0%,rgba(10,16,24,.98) 100%);
+    border-top:1px solid var(--bord);border-bottom:1px solid var(--bord);
+    padding:48px;position:relative;overflow:hidden;
+  }
+  .stats-strip-grid{
+    max-width:1320px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:rgba(56,182,255,.06);
+  }
+  @media(max-width:680px){
+    .stats-strip{padding:28px 20px}
+    .stats-strip-grid{grid-template-columns:repeat(2,1fr)}
+  }
 
   /* ── FOOTER ── */
   footer{
@@ -2200,7 +2225,6 @@ const G = `
   }
   @media(max-width:680px){
     .nav{padding:12px 20px}
-    .nav-links{display:none}
     .section{padding:60px 20px}
     .formula-wrap{padding:60px 20px}
     .home-sections{grid-template-columns:1fr}
@@ -3584,12 +3608,9 @@ function HomePage({setPage}){
       </section>
 
       {/* QUICK STATS STRIP */}
-      <div style={{
-        background:'linear-gradient(180deg,var(--surf) 0%,rgba(10,16,24,.98) 100%)',
-        borderTop:'1px solid var(--bord)',borderBottom:'1px solid var(--bord)',padding:'48px',
-        position:'relative',overflow:'hidden'}}>
+      <div className="stats-strip">
         <div style={{position:'absolute',inset:0,background:'radial-gradient(ellipse 60% 100% at 50% 50%,rgba(56,182,255,.03),transparent)',pointerEvents:'none'}}/>
-        <div style={{maxWidth:1320,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:1,background:'rgba(56,182,255,.06)'}}>
+        <div className="stats-strip-grid">
           {[
             {n:'Web 1','r':'+1000%','l':'Amazon ×50'},
             {n:'Web 2','r':'+100 000%','l':'Netflix ×1000'},
