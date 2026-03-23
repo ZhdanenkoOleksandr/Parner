@@ -1,121 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-// ============= 1. TRANSLATIONS (добавьте в начало файла) =============
- 
-const translations = {
-  uk: {
-    nav: {
-      system: "Система",
-      token: "Токен",
-      onespace: "OneSpace",
-      metaresources: "Метаресурси",
-      cases: "Web4 Кейси",
-      contact: "Контакт",
-      consultation: "Консультація"
-    },
-    form: {
-      name: { label: "Ім'я *", placeholder: "Ваше ім'я" },
-      userType: {
-        label: "Хто ви? *",
-        placeholder: "Оберіть варіант",
-        investor: "Інвестор",
-        business: "Бізнес (постачальник товарів та послуг)",
-        partner: "Партнер системи",
-        user: "Користувач (інтерес до товарів та сервісів Web4)"
-      },
-      phone: { label: "Телефон", placeholder: "+380 XX XXX XXXX", hint: "Вкажіть телефон або Telegram" },
-      telegram: { label: "Telegram", placeholder: "@username" },
-      message: { label: "Повідомлення", placeholder: "Опишіть ваше питання або тему для обговорення..." },
-      submit: "Надіслати заявку",
-      submitting: "Відправка...",
-      success: "Заявку надіслано! Очікуйте зв'язку."
-    },
-    contact: {
-      tag: "▸ Зв'язок",
-      title: "Заповніть",
-      titleSpan: "форму",
-      quote: {
-        text: "Найкращий час для входу в трансформаційну технологію — на старті. Другий найкращий час — зараз.",
-        author: "— Олександр Жданенко"
-      }
-    }
-  },
-  
-  en: {
-    nav: {
-      system: "System",
-      token: "Token",
-      onespace: "OneSpace",
-      metaresources: "Metaresources",
-      cases: "Web4 Cases",
-      contact: "Contact",
-      consultation: "Consultation"
-    },
-    form: {
-      name: { label: "Name *", placeholder: "Your name" },
-      userType: {
-        label: "Who are you? *",
-        placeholder: "Select option",
-        investor: "Investor",
-        business: "Business (goods and services provider)",
-        partner: "System Partner",
-        user: "User (interested in Web4 goods and services)"
-      },
-      phone: { label: "Phone", placeholder: "+1 XXX XXX XXXX", hint: "Provide phone or Telegram" },
-      telegram: { label: "Telegram", placeholder: "@username" },
-      message: { label: "Message", placeholder: "Describe your question or topic for discussion..." },
-      submit: "Submit Application",
-      submitting: "Sending...",
-      success: "Application sent! Expect contact soon."
-    },
-    contact: {
-      tag: "▸ Contact",
-      title: "Fill out the",
-      titleSpan: "form",
-      quote: {
-        text: "The best time to enter transformational technology is at the start. The second best time is now.",
-        author: "— Oleksandr Zhdanenko"
-      }
-    }
-  },
-  
-  ru: {
-    nav: {
-      system: "Система",
-      token: "Токен",
-      onespace: "OneSpace",
-      metaresources: "Метаресурсы",
-      cases: "Web4 Кейсы",
-      contact: "Контакт",
-      consultation: "Консультация"
-    },
-    form: {
-      name: { label: "Имя *", placeholder: "Ваше имя" },
-      userType: {
-        label: "Кто вы? *",
-        placeholder: "Выберите вариант",
-        investor: "Инвестор",
-        business: "Бизнес (поставщик товаров и услуг)",
-        partner: "Партнёр системы",
-        user: "Пользователь (интерес к товарам и сервисам Web4)"
-      },
-      phone: { label: "Телефон", placeholder: "+7 XXX XXX XXXX", hint: "Укажите телефон или Telegram" },
-      telegram: { label: "Telegram", placeholder: "@username" },
-      message: { label: "Сообщение", placeholder: "Опишите ваш вопрос или тему для обсуждения..." },
-      submit: "Отправить заявку",
-      submitting: "Отправка...",
-      success: "Заявка отправлена! Ожидайте связи."
-    },
-    contact: {
-      tag: "▸ Связь",
-      title: "Заполните",
-      titleSpan: "форму",
-      quote: {
-        text: "Лучшее время для входа в трансформационную технологию — на старте. Второе лучшее время — сейчас.",
-        author: "— Александр Жданенко"
-      }
-    }
-  }
-};
+
 /* ─────────── SCROLL REVEAL HOOK ─────────── */
 function useReveal(){
   const ref = useRef(null);
@@ -132,21 +16,13 @@ function useReveal(){
 }
 
 /* ─────────── NAV SCROLL HOOK ─────────── */
-function useScrolled(threshold = 40) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > threshold);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [threshold]);
-
+function useScrolled(threshold=40){
+  const [scrolled,setScrolled]=useState(false);
+  useEffect(()=>{
+    const h=()=>setScrolled(window.scrollY>threshold);
+    window.addEventListener('scroll',h,{passive:true});
+    return()=>window.removeEventListener('scroll',h);
+  },[threshold]);
   return scrolled;
 }
 
@@ -170,7 +46,6 @@ function AnimCounter({to,suffix='',duration=1600}){
   },[vis,to,duration]);
   return <span ref={ref}>{val.toLocaleString()}{suffix}</span>;
 }
-
 /* ─────────── MOBILE MENU HOOK ─────────── */
 function useMobileMenu(){
   const [open,setOpen]=useState(false);
@@ -206,101 +81,9 @@ const G = `
     --space-lg:32px;
     --space-xl:48px;
     --space-2xl:64px;
+    
+    /* Touch Targets */
     --touch-min:44px;
-  }
-  /* Language Switcher - Desktop & Mobile */
-  .lang-switcher {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    background: rgba(56, 182, 255, 0.05);
-    border: 1px solid rgba(56, 182, 255, 0.11);
-    border-radius: 20px;
-    padding: 4px;
-    backdrop-filter: blur(8px);
-  }
-  
-  .lang-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 16px;
-    transition: all 0.2s ease;
-    opacity: 0.5;
-    min-width: 44px;
-    min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: var(--txt);
-  }
-  
-  .lang-flag {
-    font-size: 16px;
-    line-height: 1;
-  }
-  
-  .lang-code {
-    font-size: 10px;
-    text-transform: uppercase;
-    opacity: 0;
-    max-width: 0;
-    overflow: hidden;
-    transition: all 0.2s ease;
-  }
-  
-  .lang-btn:hover {
-    opacity: 0.8;
-    background: rgba(56, 182, 255, 0.08);
-  }
-  
-  .lang-btn:hover .lang-code {
-    opacity: 1;
-    max-width: 30px;
-  }
-  
-  .lang-btn.active {
-    opacity: 1;
-    background: rgba(56, 182, 255, 0.15);
-    box-shadow: 0 2px 8px rgba(56, 182, 255, 0.2);
-  }
-  
-  .lang-btn.active .lang-code {
-    opacity: 1;
-    max-width: 30px;
-  }
-  
-  /* Mobile positioning */
-  @media (max-width: 768px) {
-    .nav .lang-switcher {
-      position: absolute;
-      top: 14px;
-      right: 70px;
-      scale: 0.9;
-    }
-    
-    .lang-code {
-      display: none;
-    }
-    
-    .lang-btn {
-      min-width: 36px;
-      padding: 6px 8px;
-    }
-  }
-  
-  /* Extra small screens */
-  @media (max-width: 360px) {
-    .nav .lang-switcher {
-      scale: 0.85;
-      right: 65px;
-    }
   }
   html{scroll-behavior:smooth}
   *,*::before,*::after{
@@ -3536,6 +3319,7 @@ function PersonalBrandBlock({setPage}){
     return {x:CX+R*Math.cos(angle), y:CY+R*Math.sin(angle)};
   });
   const infra=[
+    {name:'iO',desc:'персональний помічник'},
     {name:'LINK',desc:'мережа довіри'},
     {name:'AURA',desc:'цифрова репутація'},
     {name:'PING',desc:'безпечна комунікація'},
@@ -3663,7 +3447,6 @@ function Nav({page,setPage}){
           <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
           <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
         </div>
-        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:4,lineHeight:1}}>ПАРТНЕР</div>
       </div>
       
         <button 
@@ -3686,9 +3469,6 @@ function Nav({page,setPage}){
       <div style={{flexShrink:0,textAlign:'right'}}>
         <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap',cursor:'pointer'}} onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
           Oleksandr Zhdanenko
-        </div>
-        <div style={{marginTop:4,display:'flex',justifyContent:'flex-end'}}>
-          <button className="nav-cta" onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>Консультація</button>
         </div>
       </div>
     </nav>
@@ -4115,8 +3895,9 @@ function BitbonEcosystem(){
       desc: 'Суверенна цифрова ідентичність',
       color: '#38b6ff',
       glow: 'rgba(56,182,255,.22)',
-      count: 3,
+      count: 4,
       services: [
+        { icon: '🤖', name: 'iO', desc: 'Персональний AI-помічник' },
         { icon: '🔗', name: 'LINK', desc: 'Управління довірчими зв\'язками' },
         { icon: '✨', name: 'AURA', desc: 'Цифрова репутація користувача' },
         { icon: '⚖️', name: 'Таємний арбітр', desc: 'Вирішення спорів' }
@@ -4146,8 +3927,9 @@ function BitbonEcosystem(){
       desc: 'Безпека та репутація',
       color: '#7b5cfa',
       glow: 'rgba(123,92,250,.22)',
-      count: 3,
+      count: 4,
       services: [
+        { icon: '🤖', name: 'iO', desc: 'Персональний AI-помічник' },
         { icon: '🔗', name: 'LINK', desc: 'Управління довірчими зв\'язками' },
         { icon: '✨', name: 'AURA', desc: 'Цифрова репутація користувача' },
         { icon: '⚖️', name: 'Таємний арбітр', desc: 'Вирішення спорів' }
@@ -4655,9 +4437,6 @@ function Web4Page({setPage}){
   const [ref1,vis1] = useReveal();
   const [ref2,vis2] = useReveal();
   const [ref3,vis3] = useReveal();
-  const [ref4,vis4] = useReveal();
-  const [ref5,vis5] = useReveal();
-  const [ref6,vis6] = useReveal();
 
   return(
     <>
@@ -4860,8 +4639,8 @@ function Web4Page({setPage}){
         <hr className="divider"/>
 
         {/* ══════ 4 — EVOLUTION ══════ */}
-        <div className="w4a-evo" ref={ref4}>
-          <div className={`w4a-evo-inner reveal ${vis4?'vis':''}`}>
+        <div className="w4a-evo">
+          <div className="w4a-evo-inner reveal vis">
             <div className="w4a-evo-header">
               <div className="sec-tag">◆ ЕВОЛЮЦІЯ</div>
               <h2 className="sec-title">Web2 → Web3 → Web4</h2>
@@ -4903,8 +4682,8 @@ function Web4Page({setPage}){
         <hr className="divider"/>
 
         {/* ══════ 5 — ARCHITECTURE ══════ */}
-        <div className="w4a-arch" ref={ref4}>
-          <div className={`w4a-arch-inner reveal ${vis4?'vis':''}`}>
+        <div className="w4a-arch">
+          <div className="w4a-arch-inner reveal vis">
             <div className="w4a-arch-header">
               <div className="sec-tag">◆ АРХІТЕКТУРА</div>
               <h2 className="sec-title">4 рівні системи</h2>
@@ -4926,8 +4705,8 @@ function Web4Page({setPage}){
         </div>
 
         {/* ══════ 6 — CTA ══════ */}
-        <div className="w4a-cta" ref={ref5}>
-          <div className={`w4a-cta-inner reveal ${vis5?'vis':''}`}>
+        <div className="w4a-cta">
+          <div className="w4a-cta-inner reveal vis">
             <div className="sec-tag" style={{textAlign:'center',display:'block'}}>◆ ПОЧАТОК</div>
             <h2 className="w4a-cta-title">Розпочніть перехід<br/>у <span>Web4</span></h2>
             <p className="w4a-cta-sub">
@@ -4956,6 +4735,22 @@ function Web4Page({setPage}){
 
       </div>
     </>
+  );
+}
+
+/* ── KPI PROGRESS BAR COMPONENT ── */
+function KpiBar({label, value, percent}){
+  const [ref,vis] = useReveal();
+  return(
+    <div className="kpi-bar-item" ref={ref}>
+      <div className="kpi-bar-header">
+        <span className="kpi-bar-label">{label}</span>
+        <span className="kpi-bar-val">{value}</span>
+      </div>
+      <div className="kpi-bar-track">
+        <div className="kpi-bar-fill" style={{width: vis ? `${percent}%` : '0%'}}/>
+      </div>
+    </div>
   );
 }
 
@@ -5311,11 +5106,11 @@ function ContactPage({setPage, showToast}){
     
     try {
       // ═══════════════════════════════════════════════════════════════
-      // ВАЖЛИВО! Замініть URL нижче на ваш реальний Google Apps Script URL
-      // Інструкція: GOOGLE-SHEETS-INTEGRATION.md
+      // Google Apps Script URL для отправки данных в Google Sheets
+      // Таблица: https://docs.google.com/spreadsheets/d/1ZAb1HPC4jiX582K1lmkQkrmRnlOk3fALYeJOU71b0uc/edit
       // ═══════════════════════════════════════════════════════════════
       
-      const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxYOUR_DEPLOYMENT_ID/exec';
+      const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz3pSSCDFto3x4Y3LZpTcbbAuwCBGeILmrfEMsgC_Iy_Ie2U9eVyjT09iG8lDdeTjnoZw/exec';
       
       // Відправка в Google Sheets
       const response = await fetch(GOOGLE_SHEETS_URL, {
@@ -5631,14 +5426,10 @@ export default function App(){
             <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
             <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
           </div>
-          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:6,lineHeight:1}}>ПАРТНЕР</div>
         </div>
         <div style={{textAlign:'right'}}>
           <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap'}}>
             Oleksandr Zhdanenko
-          </div>
-          <div style={{marginTop:6,display:'flex',justifyContent:'flex-end'}}>
-            <button className="nav-cta" onClick={()=>goTo('contact')}>Консультація</button>
           </div>
         </div>
       </footer>
