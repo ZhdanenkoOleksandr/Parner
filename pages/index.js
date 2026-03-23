@@ -2121,7 +2121,7 @@ const G = `
   }
   .w4a-arch-label{
     font-family:'JetBrains Mono',monospace;font-size:10px;
-    letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;
+    letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);margin-bottom:10px;
   }
   .w4a-arch-desc{font-size:12px;color:var(--txt);opacity:.6;line-height:1.6;
     max-width:200px;margin:0 auto}
@@ -2153,9 +2153,9 @@ const G = `
     color:var(--white);letter-spacing:-.5px;
   }
   .w4a-cta-title span{
-    background:linear-gradient(135deg,var(--acc2),#e8940a,var(--acc));
+    background:linear-gradient(135deg,var(--acc),#2596d6);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    filter:drop-shadow(0 0 24px rgba(240,165,0,.3));
+    filter:drop-shadow(0 0 24px rgba(56,182,255,.35));
   }
   .w4a-cta-sub{
     max-width:540px;margin:20px auto 0;font-size:15px;
@@ -4676,7 +4676,7 @@ function Web4Page({setPage}){
           <div className="w4a-evo-inner reveal vis">
             <div className="w4a-evo-header">
               <div className="sec-tag">◆ ЕВОЛЮЦІЯ</div>
-              <h2 className="sec-title">Web2 → Web3 → Web4</h2>
+              <h2 className="sec-title">Web2 → Web3 → <span style={{color:'var(--acc)'}}>Web4</span></h2>
               <p className="sec-sub" style={{margin:'12px auto 0'}}>
                 Кожна ера інтернету змінює центр цінності. Web4 ставить людину та її ідентичність у центр цифрової економіки.
               </p>
