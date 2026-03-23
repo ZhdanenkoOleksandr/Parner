@@ -2242,7 +2242,7 @@ const G = `
     .home-sections{grid-template-columns:1fr}
     .grid-3,.grid-4{grid-template-columns:1fr}
     .hero-web4{padding:16px 20px 56px}
-    .hero-web4 .hero-title-w4{font-size:clamp(36px,11vw,64px)}
+    .hero-web4 .hero-title-w4{font-size:clamp(36px,11vw,64px);width:100vw;margin-left:-20px;margin-right:-20px}
     .carousel-header{padding:0 20px}
     .carousel-track{padding:0 20px 16px;gap:14px}
     .meta-card{flex:0 0 290px}
@@ -2543,7 +2543,7 @@ const G = `
   }
   @media(max-width:600px){
     .hero-web4{padding:16px 20px 56px}
-    .hero-web4 .hero-title-w4{font-size:clamp(36px,11vw,64px)}
+    .hero-web4 .hero-title-w4{font-size:clamp(36px,11vw,64px);width:100vw;margin-left:-20px;margin-right:-20px}
     .carousel-header{padding:0 20px}
     .carousel-track{padding:0 20px 16px;gap:14px}
   }
@@ -3635,7 +3635,7 @@ function HomePage({setPage}){
               transition:'transform .3s,box-shadow .3s',cursor:'default'}}
               onMouseEnter={el=>el.currentTarget.style.transform='translateY(-4px)'}
               onMouseLeave={el=>el.currentTarget.style.transform='translateY(0)'}>
-              <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,color:'var(--muted)',letterSpacing:2,marginBottom:8}}>{e.n}</div>
+              <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,color:['#4a9eff','#a855f7','var(--acc2)','var(--acc)'][i],letterSpacing:2,marginBottom:8}}>{e.n}</div>
               <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:38,color:['#4a9eff','#a855f7','var(--acc2)','var(--acc)'][i],
                 textShadow:`0 0 30px ${['rgba(74,158,255,.3)','rgba(168,85,247,.3)','rgba(240,165,0,.3)','rgba(56,182,255,.3)'][i]}`}}>{e.r}</div>
               <div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'var(--muted)',letterSpacing:1,marginTop:6}}>{e.l}</div>
