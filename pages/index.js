@@ -145,7 +145,8 @@ const G = `
     border:none;
     padding:8px;
     cursor:pointer;
-    z-index:202;
+    z-index:301;
+    position:relative;
     min-width:var(--touch-min);
     min-height:var(--touch-min);
     align-items:center;
@@ -219,7 +220,9 @@ const G = `
       box-shadow:-4px 0 32px rgba(0,0,0,.8);
       border-left:1px solid var(--bord);
       overflow-y:auto;
+      z-index:300;
     }
+    .nav-author{display:none}
     
     .nav-links.open{transform:translateX(0)}
     
@@ -3466,7 +3469,7 @@ function Nav({page,setPage}){
           </span>
         ))}
       </div>
-      <div style={{flexShrink:0,textAlign:'right'}}>
+      <div className="nav-author" style={{flexShrink:0,textAlign:'right'}}>
         <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap',cursor:'pointer'}} onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
           Oleksandr Zhdanenko
         </div>
