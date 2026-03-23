@@ -377,11 +377,13 @@ const G = `
       width:100%;
       max-width:100%;
     }
-    
+
     .hero-btns{
       flex-direction:column;
       width:100%;
     }
+    .hero{justify-content:flex-start;padding-top:16px;min-height:auto}
+    .hero-name{font-size:26vw}
   }
   .btn-o:hover{
     background:rgba(56,182,255,.1);color:var(--acc);
@@ -1882,10 +1884,11 @@ const G = `
     .w4a-hero-btns{margin-top:36px}
   }
   @media(max-width:480px){
-    .w4a-hero{padding:60px 20px 80px}
+    .w4a-hero{padding:16px 20px 60px;justify-content:flex-start;min-height:auto}
     .w4a-hero-title{font-size:clamp(32px,6vw,52px);margin-top:16px}
     .w4a-hero-sub{margin-top:16px;font-size:14px}
     .w4a-hero-btns{margin-top:28px;gap:12px}
+    .w4a-hero .hero-title-w4{font-size:clamp(52px,18vw,80px)}
   }
 
   /* ── W4A IDENTITY ── */
@@ -2202,7 +2205,7 @@ const G = `
     .w4a-meta-visual{max-width:350px;margin:0 auto}
   }
   @media(max-width:680px){
-    .w4a-hero{padding:100px 20px 72px;min-height:auto}
+    .w4a-hero{padding:100px 20px 72px;min-height:auto;justify-content:flex-start}
     .w4a-identity{padding:60px 20px}
     .w4a-meta{padding:60px 20px}
     .w4a-evo{padding:60px 20px}
@@ -2238,8 +2241,8 @@ const G = `
     .formula-wrap{padding:60px 20px}
     .home-sections{grid-template-columns:1fr}
     .grid-3,.grid-4{grid-template-columns:1fr}
-    .hero-web4{padding:64px 20px 56px}
-    .hero-title-w4{font-size:clamp(36px,10vw,60px)}
+    .hero-web4{padding:16px 20px 56px}
+    .hero-web4 .hero-title-w4{font-size:clamp(36px,11vw,64px)}
     .carousel-header{padding:0 20px}
     .carousel-track{padding:0 20px 16px;gap:14px}
     .meta-card{flex:0 0 290px}
@@ -2539,8 +2542,8 @@ const G = `
     .carousel-header{flex-direction:column;align-items:flex-start;gap:20px}
   }
   @media(max-width:600px){
-    .hero-web4{padding:64px 20px 56px}
-    .hero-title-w4{font-size:clamp(36px,10vw,60px)}
+    .hero-web4{padding:16px 20px 56px}
+    .hero-web4 .hero-title-w4{font-size:clamp(36px,11vw,64px)}
     .carousel-header{padding:0 20px}
     .carousel-track{padding:0 20px 16px;gap:14px}
   }
@@ -4483,7 +4486,7 @@ function Web4Page({setPage}){
           <div className="w4a-hero-ring r3"/>
           <div className="hero-label-w4">WEB 4.0 · BITBON SYSTEM</div>
           <h1 className="hero-title-w4">
-            Бізнес у <span>Web4</span>
+            Бізнес у<br/><span>Web4</span>
           </h1>
           <p className="hero-sub-w4">
             Web4 трансформує традиційні бізнес-моделі в економіку цифрових прав, довіри та токенізованих активів, відкриваючи можливість виходу на <span style={{color:'var(--acc)'}}>ринок цифрових активів</span> без необхідності власної блокчейн-розробки.
@@ -4746,7 +4749,7 @@ function Web4Page({setPage}){
               Оберіть свій шлях: побудуйте власний мета-ресурс або отримайте стратегічну консультацію для входу в екосистему.
             </p>
             <div className="w4a-cta-buttons">
-              <button className="w4a-cta-btn w4a-cta-build" onClick={()=>setPage('onespace')}>
+              <button className="w4a-cta-btn w4a-cta-build" onClick={()=>{setPage('contact');setTimeout(()=>{document.getElementById('cp-roles-section')?.scrollIntoView({behavior:'smooth'})},100)}}>
                 <div className="w4a-cta-btn-icon">🏗️</div>
                 <div className="w4a-cta-btn-body">
                   <div className="w4a-cta-btn-title">Побудувати мета-ресурс</div>
@@ -4754,7 +4757,7 @@ function Web4Page({setPage}){
                 </div>
                 <div className="w4a-cta-btn-arrow">→</div>
               </button>
-              <button className="w4a-cta-btn w4a-cta-consult" onClick={()=>{setPage('home');setTimeout(()=>{const el=document.getElementById('cp-form-block');el?.scrollIntoView({behavior:'smooth'})},100)}}>
+              <button className="w4a-cta-btn w4a-cta-consult" onClick={()=>{setPage('contact');setTimeout(()=>{document.getElementById('cp-consult-section')?.scrollIntoView({behavior:'smooth'})},100)}}>
                 <div className="w4a-cta-btn-icon">💡</div>
                 <div className="w4a-cta-btn-body">
                   <div className="w4a-cta-btn-title">Стратегічна консультація</div>
@@ -5229,7 +5232,7 @@ function ContactPage({setPage, showToast}){
       <hr className="divider"/>
 
       {/* ━━━━━ BLOCK 2 — МОЯ РОЛЬ В ЕКОСИСТЕМІ ━━━━━ */}
-      <section className="cp-roles-section" ref={ref2}>
+      <section className="cp-roles-section" id="cp-roles-section" ref={ref2}>
         <div className="cp-roles-bg"/>
         <div className={`cp-roles-content ${vis2?'vis':''}`}>
           
@@ -5299,7 +5302,7 @@ function ContactPage({setPage, showToast}){
       <hr className="divider"/>
 
       {/* ━━━━━ BLOCK 3 — CONSULTATION CTA ━━━━━ */}
-      <section className="cp-consult-section" ref={ref3}>
+      <section className="cp-consult-section" id="cp-consult-section" ref={ref3}>
         <div className="cp-consult-bg"/>
         <div className={`cp-consult-content ${vis3?'vis':''}`}>
           <div className="cp-section-tag">▸ Консультація</div>
