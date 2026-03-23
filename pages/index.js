@@ -4738,22 +4738,6 @@ function Web4Page({setPage}){
   );
 }
 
-/* ── KPI PROGRESS BAR COMPONENT ── */
-function KpiBar({label, value, percent}){
-  const [ref,vis] = useReveal();
-  return(
-    <div className="kpi-bar-item" ref={ref}>
-      <div className="kpi-bar-header">
-        <span className="kpi-bar-label">{label}</span>
-        <span className="kpi-bar-val">{value}</span>
-      </div>
-      <div className="kpi-bar-track">
-        <div className="kpi-bar-fill" style={{width: vis ? `${percent}%` : '0%'}}/>
-      </div>
-    </div>
-  );
-}
-
 /* ═══════════ WEB4 PAGE — DIGITALIZATION JOURNEY ═══════════ */
 
 /* ═══════════ METARESOURCES PAGE ═══════════ */
