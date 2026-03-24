@@ -4215,7 +4215,7 @@ function BitbonEcosystem(){
         <div className="bitbon-eco-header">
           <div className="sec-tag">◆ ЕКОСИСТЕМА</div>
           <h2 className="sec-title">Сервіси OneSpace</h2>
-          <p className="sec-sub" style={{margin:'12px auto 0',maxWidth:720}}>
+          <p className="sec-sub" style={{margin:'12px auto 0',maxWidth:720,color:'var(--acc)'}}>
             Цілісна екосистема цифрових інструментів для взаємодії, бізнесу та довіри у Web4
           </p>
           <div className="bitbon-eco-highlight">
@@ -4421,7 +4421,7 @@ function OneSpacePage(){
               <div style={{fontSize:11,fontFamily:"'JetBrains Mono',monospace",color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',fontWeight:700}}>▸ ОСВІТА · WEB 4.0</div>
             </div>
             <h2 style={{fontSize:28,fontWeight:700,color:'var(--white)',marginBottom:8}}>Академія платформенної економіки</h2>
-            <p style={{fontSize:14,color:'var(--white)',lineHeight:1.6}}>Освіта, натхненна Вашою мрією та керована інноваціями</p>
+            <p style={{fontSize:14,color:'var(--acc)',lineHeight:1.6}}>Освіта, натхненна Вашою мрією та керована інноваціями</p>
           </div>
 
           <div style={{background:'rgba(56,182,255,.06)',border:'1px solid rgba(56,182,255,.15)',borderLeft:'4px solid rgba(56,182,255,.3)',padding:'24px clamp(14px,3vw,28px)',marginBottom:36}}>
