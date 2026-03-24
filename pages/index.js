@@ -401,7 +401,7 @@ const G = `
   .sec-title{font-family:'Bebas Neue',cursive;font-size:clamp(38px,5.5vw,72px);
     color:var(--white);letter-spacing:2px;
     text-shadow:0 0 60px rgba(56,182,255,.08)}
-  .sec-sub{color:var(--muted);font-size:14.5px;margin-top:12px;max-width:620px;line-height:1.75}
+  .sec-sub{color:var(--white);font-size:14.5px;margin-top:12px;max-width:620px;line-height:1.75}
   .sec-header{margin-bottom:56px}
   .divider{height:1px;background:linear-gradient(90deg,transparent,var(--bord) 20%,rgba(56,182,255,.08) 50%,var(--bord) 80%,transparent);border:none;margin:0}
 
@@ -827,7 +827,7 @@ const G = `
   }
   .hero-sub-w4{
     max-width:700px;margin:28px auto 0;
-    font-size:17px;color:var(--txt);line-height:1.9;
+    font-size:17px;color:var(--white);line-height:1.9;
     position:relative;z-index:2;opacity:.9;
     animation:heroFade .8s .24s ease both;
   }
@@ -870,7 +870,7 @@ const G = `
     animation:heroFade .8s .5s ease both;
   }
   .hero-desc-w4 p{
-    font-size:15px;color:var(--txt);line-height:1.85;opacity:.85;
+    font-size:15px;color:var(--white);line-height:1.85;opacity:.85;
   }
   .hero-results-w4{
     display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
@@ -915,7 +915,7 @@ const G = `
     color:var(--white);letter-spacing:-0.5px;line-height:1;
   }
   .carousel-sub{
-    color:var(--muted);font-size:15px;margin-top:10px;line-height:1.6;
+    color:var(--white);font-size:15px;margin-top:10px;line-height:1.6;
     max-width:500px;
   }
   .carousel-nav{display:flex;gap:8px}
@@ -1294,7 +1294,7 @@ const G = `
   }
   .cp-consult-sub{
     max-width:640px;margin:0 auto 44px;font-size:14.5px;
-    color:var(--txt);line-height:1.85;
+    color:var(--white);line-height:1.85;
   }
 
   .cp-consult-grid{
@@ -1632,7 +1632,7 @@ const G = `
   @keyframes partnerGlow{0%{opacity:.5;transform:scale(.92)}100%{opacity:1;transform:scale(1.08)}}
   .cp-eco-partner-card{position:relative;z-index:2;background:linear-gradient(135deg,rgba(56,182,255,.08),rgba(123,92,250,.06));border:2px solid rgba(56,182,255,.25);padding:48px 56px;text-align:center;box-shadow:0 24px 72px rgba(0,0,0,.6),0 0 60px rgba(56,182,255,.12)}
   .cp-eco-partner-title{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(24px,3.2vw,38px);background:linear-gradient(135deg,var(--acc),var(--acc3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px;letter-spacing:-.4px}
-  .cp-eco-partner-desc{font-size:15px;line-height:1.85;color:var(--txt);opacity:.9;max-width:580px;margin:0 auto}
+  .cp-eco-partner-desc{font-size:15px;line-height:1.85;color:var(--white);opacity:.9;max-width:580px;margin:0 auto}
 
   /* ── ECOSYSTEM DIRECTIONS ── */
   .cp-eco-directions{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto 64px}
@@ -2162,7 +2162,7 @@ const G = `
   }
   .w4a-cta-sub{
     max-width:540px;margin:20px auto 0;font-size:15px;
-    color:var(--txt);line-height:1.8;opacity:.8;
+    color:var(--white);line-height:1.8;opacity:.8;
   }
   .w4a-cta-buttons{
     display:flex;gap:20px;justify-content:center;margin-top:52px;flex-wrap:wrap;
@@ -2345,7 +2345,7 @@ const G = `
   }
   .hero-sub-w4{
     max-width:700px;margin:28px auto 0;
-    font-size:17px;color:var(--txt);line-height:1.9;
+    font-size:17px;color:var(--white);line-height:1.9;
     position:relative;z-index:2;opacity:.9;
     animation:heroFade .8s .24s ease both;
   }
@@ -2388,7 +2388,7 @@ const G = `
     animation:heroFade .8s .5s ease both;
   }
   .hero-desc-w4 p{
-    font-size:15px;color:var(--txt);line-height:1.85;opacity:.85;
+    font-size:15px;color:var(--white);line-height:1.85;opacity:.85;
   }
   .hero-results-w4{
     display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
@@ -2433,7 +2433,7 @@ const G = `
     color:var(--white);letter-spacing:-0.5px;line-height:1;
   }
   .carousel-sub{
-    color:var(--muted);font-size:15px;margin-top:10px;line-height:1.6;
+    color:var(--white);font-size:15px;margin-top:10px;line-height:1.6;
     max-width:500px;
   }
   .carousel-nav{display:flex;gap:8px}
@@ -2581,7 +2581,7 @@ const G = `
     filter:drop-shadow(0 0 24px rgba(56,182,255,.35));
   }
   .pb-hero-sub{
-    text-align:center;font-size:15px;color:var(--txt);
+    text-align:center;font-size:15px;color:var(--white);
     max-width:560px;margin:0 auto 48px;line-height:1.8;opacity:.85;
   }
 
@@ -2817,7 +2817,7 @@ const G = `
     filter:drop-shadow(0 0 20px rgba(56,182,255,.3));
   }
   .w4t-sub{
-    font-size:16px;color:var(--txt);line-height:1.8;
+    font-size:16px;color:var(--white);line-height:1.8;
     max-width:700px;margin:18px auto 0;opacity:.85;
   }
 
@@ -3689,7 +3689,7 @@ function SystemPage(){
             <div key={i} style={{background:'var(--surf)',border:'1px solid var(--bord)',borderTop:`3px solid ${p.color}`,padding:'32px'}}>
               <div style={{fontSize:32,marginBottom:16}}>{p.icon}</div>
               <div style={{fontSize:18,fontWeight:700,color:'var(--white)',marginBottom:10}}>{p.name}</div>
-              <div style={{fontSize:13,color:'var(--muted)',lineHeight:1.7}}>{p.desc}</div>
+              <div style={{fontSize:13,color:'var(--white)',lineHeight:1.7}}>{p.desc}</div>
             </div>
           ))}
         </div>
@@ -3738,7 +3738,7 @@ function SystemPage(){
                 onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.borderColor='var(--bord)';e.currentTarget.style.boxShadow='none'}}>
                 <div style={{fontSize:28,marginBottom:12}}>{prof.icon}</div>
                 <div style={{fontSize:15,fontWeight:700,color:'var(--white)',marginBottom:8}}>{prof.title}</div>
-                <div style={{fontSize:12,color:'var(--muted)',lineHeight:1.6,flex:1}}>{prof.desc}</div>
+                <div style={{fontSize:12,color:'var(--white)',lineHeight:1.6,flex:1}}>{prof.desc}</div>
               </div>
               </Reveal>
             ))}
@@ -3798,16 +3798,16 @@ function TokenPage({setPage}){
             <h3 style={{fontFamily:"'Bebas Neue',cursive",fontSize:36,color:'var(--white)',marginBottom:16,letterSpacing:1}}>
               Чому Bitbon?
             </h3>
-            <p style={{fontSize:14,color:'var(--txt)',lineHeight:1.8,marginBottom:14}}>
+            <p style={{fontSize:14,color:'var(--white)',lineHeight:1.8,marginBottom:14}}>
               Bitbon — цифровий актив, забезпечений інфраструктурою та механізмами управління немонетарними активами.
               Він виконує ключову функцію в децентралізованій Системі Bitbon, об'єднуючи користувачів, бізнес,
               громадські ініціативи та токенізовані активи в єдину економіку.
             </p>
-            <p style={{fontSize:14,color:'var(--txt)',lineHeight:1.8,marginBottom:14}}>
+            <p style={{fontSize:14,color:'var(--white)',lineHeight:1.8,marginBottom:14}}>
               Система Bitbon поєднує реальний сектор економіки <strong style={{color:'var(--acc)'}}>$300+ трлн.</strong> з Web4.0 —
               відкриваючи безмежні можливості капіталізації та збільшення ціни токена.
             </p>
-            <p style={{fontSize:14,color:'var(--txt)',lineHeight:1.8,marginBottom:24}}>
+            <p style={{fontSize:14,color:'var(--white)',lineHeight:1.8,marginBottom:24}}>
               Згідно з «Публічним Контрактом» Системи Bitbon — <strong style={{color:'var(--acc2)'}}>додатковий випуск токенів неможливий</strong>.
               Фіксована емісія 100 000 000 одиниць у поєднанні зі зростанням попиту формує дефляційну модель.
             </p>
@@ -3888,7 +3888,7 @@ function TokenPage({setPage}){
           </div>
         </div>
         <div className="formula-result">$80,000</div>
-        <div style={{color:'var(--muted)',fontSize:14,marginTop:8}}>
+        <div style={{color:'var(--white)',fontSize:14,marginTop:8}}>
           При інвестиції $1 000 на старті Web4 · Потенціал ×240 · Ціна входу $3
         </div>
         <div className="epoch-compare">
@@ -3908,7 +3908,7 @@ function TokenPage({setPage}){
         <h2 style={{fontFamily:"'Bebas Neue',cursive",fontSize:'clamp(36px,5vw,64px)',color:'var(--white)',letterSpacing:2,marginTop:8,maxWidth:900,margin:'8px auto 0'}}>
           Хто входить на старті трансформаційної технології — отримує максимум
         </h2>
-        <p style={{color:'var(--muted)',fontSize:15,marginTop:20,maxWidth:700,margin:'20px auto 0',lineHeight:1.8}}>
+        <p style={{color:'var(--white)',fontSize:15,marginTop:20,maxWidth:700,margin:'20px auto 0',lineHeight:1.8}}>
           Web4 — наступна трансформація. Bitbon System — інфраструктура, що вже функціонує. Момент входу — зараз, поки ціна активу формується на старті.
         </p>
         <button className="btn-p" style={{marginTop:36}} onClick={()=>setPage('contact')}>Записатись на консультацію →</button>
@@ -4337,7 +4337,7 @@ function OneSpacePage(){
           
           <p style={{
             fontSize:16,
-            color:'var(--txt)',
+            color:'var(--white)',
             lineHeight:1.8,
             maxWidth:820,
             margin:'0 auto',
@@ -4378,7 +4378,7 @@ function OneSpacePage(){
           </div>
           <div style={{textAlign:'center'}}>
             <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:28,color:'var(--white)',marginBottom:12,letterSpacing:2}}>Мобільний додаток</div>
-            <p style={{fontSize:13,color:'var(--muted)',lineHeight:1.8,maxWidth:400,margin:'0 auto'}}>
+            <p style={{fontSize:13,color:'var(--white)',lineHeight:1.8,maxWidth:400,margin:'0 auto'}}>
               One Space доступний для iOS та Android. Через мобільний інтерфейс ви отримуєте
               доступ до всіх сервісів екосистеми, можете обмінюватися майновими правами,
               здійснювати оплату та вести економічну діяльність.
@@ -4390,7 +4390,7 @@ function OneSpacePage(){
             style={{width:'100%',display:'block',maxHeight:260,objectFit:'cover'}}/>
           <div style={{padding:'24px clamp(14px,3vw,28px)',textAlign:'center'}}>
             <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:28,color:'var(--white)',marginBottom:10}}>Конструктор Метаресурсів</div>
-            <p style={{fontSize:13,color:'var(--muted)',lineHeight:1.7,marginBottom:16}}>
+            <p style={{fontSize:13,color:'var(--white)',lineHeight:1.7,marginBottom:16}}>
               Кожен користувач може створити власний сервіс-метаресурс та запропонувати його спільноті.
               Метаресурс токенізується та стає самостійною економічною одиницею в екосистемі.
               Прикладами є «Цифрова інтуїція», освітні платформи, психологічні сервіси.
@@ -4421,11 +4421,11 @@ function OneSpacePage(){
               <div style={{fontSize:11,fontFamily:"'JetBrains Mono',monospace",color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',fontWeight:700}}>▸ ОСВІТА · WEB 4.0</div>
             </div>
             <h2 style={{fontSize:28,fontWeight:700,color:'var(--white)',marginBottom:8}}>Академія платформенної економіки</h2>
-            <p style={{fontSize:14,color:'var(--muted)',lineHeight:1.6}}>Освіта, натхненна Вашою мрією та керована інноваціями</p>
+            <p style={{fontSize:14,color:'var(--white)',lineHeight:1.6}}>Освіта, натхненна Вашою мрією та керована інноваціями</p>
           </div>
 
           <div style={{background:'rgba(56,182,255,.06)',border:'1px solid rgba(56,182,255,.15)',borderLeft:'4px solid rgba(56,182,255,.3)',padding:'24px clamp(14px,3vw,28px)',marginBottom:36}}>
-            <p style={{fontSize:14,color:'var(--txt)',lineHeight:1.75}}>
+            <p style={{fontSize:14,color:'var(--white)',lineHeight:1.75}}>
               Це новий соціальний та технологічний простір, де знання служать розкриттю безмежного потенціалу людини на благо суспільства, а спільнота це гідно оцінює. Навчання, орієнтоване на мрію, поєднує три ключові елементи для розвитку особистості в епоху Web 4.0.
             </p>
           </div>
@@ -4439,7 +4439,7 @@ function OneSpacePage(){
               <div key={i} style={{background:'var(--bg)',border:'1px solid var(--bord)',borderTop:'2px solid var(--acc)',padding:'22px 20px',display:'flex',flexDirection:'column',gap:10}}>
                 <div style={{fontSize:28}}>{item.icon}</div>
                 <div style={{fontSize:14,fontWeight:700,color:'var(--white)'}}>{item.title}</div>
-                <div style={{fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{item.desc}</div>
+                <div style={{fontSize:12,color:'var(--white)',lineHeight:1.5}}>{item.desc}</div>
               </div>
             ))}
           </div>
@@ -4456,7 +4456,7 @@ function OneSpacePage(){
                 <div key={i} style={{background:'rgba(56,182,255,.05)',border:'1px solid rgba(56,182,255,.12)',borderLeft:'3px solid var(--acc)',padding:'18px 16px'}}>
                   <div style={{fontSize:18,marginBottom:8}}>{item.num}</div>
                   <div style={{fontSize:13,fontWeight:700,color:'var(--white)',marginBottom:6}}>{item.prof}</div>
-                  <div style={{fontSize:11,color:'var(--muted)',lineHeight:1.5}}>{item.desc}</div>
+                  <div style={{fontSize:11,color:'var(--white)',lineHeight:1.5}}>{item.desc}</div>
                 </div>
               ))}
             </div>
@@ -5150,12 +5150,12 @@ function MetaresourcesPage({setPage}){
           <SectionHeader tag="Галузеве рішення · Web 4.0" title="Агробон — Агромаркетплейс"
             sub="Перший галузевий метаресурс на базі Bitbon System для аграрного сектору"/>
           <div style={{marginTop:36,marginBottom:28}}>
-            <p style={{fontSize:15,color:'var(--txt)',lineHeight:1.85,marginBottom:14}}>
+            <p style={{fontSize:15,color:'var(--white)',lineHeight:1.85,marginBottom:14}}>
               Агробон — агромаркетплейс на базі блокчейн-платформи Системи Bitbon. Фермерські господарства розміщують попередні
               замовлення на постачання майбутньої агропродукції. Споживачі оформлюють замовлення з юридичними гарантіями та
               можливістю переуступки прав.
             </p>
-            <p style={{fontSize:15,color:'var(--txt)',lineHeight:1.85}}>
+            <p style={{fontSize:15,color:'var(--white)',lineHeight:1.85}}>
               Перший галузевий кейс застосування Bitbon System в аграрному секторі. Уся ланцюжок від фермера до кінцевого
               споживача токенізується та автоматично фіксується в розподіленому реєстрі — без посередників, прозоро і незмінно.
             </p>
@@ -5217,12 +5217,12 @@ function MetaresourcesPage({setPage}){
             </div>
           </div>
           <div style={{marginBottom:28}}>
-            <p style={{fontSize:15,color:'var(--txt)',lineHeight:1.85,marginBottom:14}}>
+            <p style={{fontSize:15,color:'var(--white)',lineHeight:1.85,marginBottom:14}}>
               Газбон — маркетплейс на базі блокчейн-платформи Системи Bitbon для ринку природного газу.
               Видобувні компанії розміщують пропозиції на постачання газу, транспортувальники фіксують маршрути,
               а споживачі отримують юридично захищені права на отримання ресурсу з можливістю переуступки.
             </p>
-            <p style={{fontSize:15,color:'var(--txt)',lineHeight:1.85}}>
+            <p style={{fontSize:15,color:'var(--white)',lineHeight:1.85}}>
               Уся ланцюжок від свердловини до кінцевого споживача токенізується та автоматично фіксується
               в розподіленому реєстрі — без посередників, прозоро і незмінно.
             </p>
@@ -5271,7 +5271,7 @@ function MetaresourcesPage({setPage}){
           </div>
           <div style={{background:'rgba(56,182,255,.04)',border:'1px dashed rgba(56,182,255,.15)',padding:'18px 24px'}}>
             <div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',marginBottom:8}}>🔧 Статус розробки</div>
-            <div style={{fontSize:13,color:'var(--txt)',lineHeight:1.7}}>
+            <div style={{fontSize:13,color:'var(--white)',lineHeight:1.7}}>
               Ведеться розробка концепції та технічної архітектури. Планується запуск пілотного проєкту у 2026–2027 рр. Зацікавлені партнери та інвестори можуть звернутись для участі у пілоті.
             </div>
           </div>
