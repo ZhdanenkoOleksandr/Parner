@@ -3689,7 +3689,7 @@ function SystemPage(){
             <div key={i} style={{background:'var(--surf)',border:'1px solid var(--bord)',borderTop:`3px solid ${p.color}`,padding:'32px'}}>
               <div style={{fontSize:32,marginBottom:16}}>{p.icon}</div>
               <div style={{fontSize:18,fontWeight:700,color:'var(--white)',marginBottom:10}}>{p.name}</div>
-              <div style={{fontSize:13,color:'var(--white)',lineHeight:1.7}}>{p.desc}</div>
+              <div style={{fontSize:13,color:'var(--muted)',lineHeight:1.7}}>{p.desc}</div>
             </div>
           ))}
         </div>
@@ -3738,7 +3738,7 @@ function SystemPage(){
                 onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.borderColor='var(--bord)';e.currentTarget.style.boxShadow='none'}}>
                 <div style={{fontSize:28,marginBottom:12}}>{prof.icon}</div>
                 <div style={{fontSize:15,fontWeight:700,color:'var(--white)',marginBottom:8}}>{prof.title}</div>
-                <div style={{fontSize:12,color:'var(--white)',lineHeight:1.6,flex:1}}>{prof.desc}</div>
+                <div style={{fontSize:12,color:'var(--muted)',lineHeight:1.6,flex:1}}>{prof.desc}</div>
               </div>
               </Reveal>
             ))}
@@ -4378,7 +4378,7 @@ function OneSpacePage(){
           </div>
           <div style={{textAlign:'center'}}>
             <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:28,color:'var(--white)',marginBottom:12,letterSpacing:2}}>Мобільний додаток</div>
-            <p style={{fontSize:13,color:'var(--white)',lineHeight:1.8,maxWidth:400,margin:'0 auto'}}>
+            <p style={{fontSize:13,color:'var(--muted)',lineHeight:1.8,maxWidth:400,margin:'0 auto'}}>
               One Space доступний для iOS та Android. Через мобільний інтерфейс ви отримуєте
               доступ до всіх сервісів екосистеми, можете обмінюватися майновими правами,
               здійснювати оплату та вести економічну діяльність.
@@ -4390,7 +4390,7 @@ function OneSpacePage(){
             style={{width:'100%',display:'block',maxHeight:260,objectFit:'cover'}}/>
           <div style={{padding:'24px clamp(14px,3vw,28px)',textAlign:'center'}}>
             <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:28,color:'var(--white)',marginBottom:10}}>Конструктор Метаресурсів</div>
-            <p style={{fontSize:13,color:'var(--white)',lineHeight:1.7,marginBottom:16}}>
+            <p style={{fontSize:13,color:'var(--muted)',lineHeight:1.7,marginBottom:16}}>
               Кожен користувач може створити власний сервіс-метаресурс та запропонувати його спільноті.
               Метаресурс токенізується та стає самостійною економічною одиницею в екосистемі.
               Прикладами є «Цифрова інтуїція», освітні платформи, психологічні сервіси.
@@ -4439,7 +4439,7 @@ function OneSpacePage(){
               <div key={i} style={{background:'var(--bg)',border:'1px solid var(--bord)',borderTop:'2px solid var(--acc)',padding:'22px 20px',display:'flex',flexDirection:'column',gap:10}}>
                 <div style={{fontSize:28}}>{item.icon}</div>
                 <div style={{fontSize:14,fontWeight:700,color:'var(--white)'}}>{item.title}</div>
-                <div style={{fontSize:12,color:'var(--white)',lineHeight:1.5}}>{item.desc}</div>
+                <div style={{fontSize:12,color:'var(--muted)',lineHeight:1.5}}>{item.desc}</div>
               </div>
             ))}
           </div>
@@ -4456,7 +4456,7 @@ function OneSpacePage(){
                 <div key={i} style={{background:'rgba(56,182,255,.05)',border:'1px solid rgba(56,182,255,.12)',borderLeft:'3px solid var(--acc)',padding:'18px 16px'}}>
                   <div style={{fontSize:18,marginBottom:8}}>{item.num}</div>
                   <div style={{fontSize:13,fontWeight:700,color:'var(--white)',marginBottom:6}}>{item.prof}</div>
-                  <div style={{fontSize:11,color:'var(--white)',lineHeight:1.5}}>{item.desc}</div>
+                  <div style={{fontSize:11,color:'var(--muted)',lineHeight:1.5}}>{item.desc}</div>
                 </div>
               ))}
             </div>
