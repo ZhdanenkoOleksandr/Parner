@@ -3920,9 +3920,22 @@ function TokenPage({setPage}){
 /* ═══════════ DIGITAL INTUITION BLOCK ═══════════ */
 function DigitalIntuitionBlock() {
   const [diActive, setDiActive] = useState(false);
+  const orbitRef = useRef(null);
+  const [orbitScale, setOrbitScale] = useState(1);
+
   useEffect(() => {
     const timer = setTimeout(() => setDiActive(true), 400);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const el = orbitRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const obs = new ResizeObserver(([entry]) => {
+      setOrbitScale(Math.min(1, entry.contentRect.width / 480));
+    });
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
   const R = 155;
@@ -3990,11 +4003,19 @@ function DigitalIntuitionBlock() {
           Цифрова інтуїція
         </h2>
         <p style={{fontSize:13,color:'white',maxWidth:540,margin:'0 auto',lineHeight:1.75}}>
-          здатність людини за допомогою даних, ШІ та цифрових інструментів швидко оцінювати довіру, ризики й потенціал взаємодії. При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.
+          здатність людини за допомогою даних, ШІ та цифрових інструментів швидко оцінювати довіру, ризики й потенціал взаємодії.<br/>
+          <span style={{color:'var(--acc)'}}>При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.</span>
         </p>
       </div>
 
-      <div style={{position:'relative',width:480,height:480,margin:'0 auto 32px'}}>
+      {/* Responsive orbit wrapper — scales down on narrow screens */}
+      <div ref={orbitRef} style={{width:'100%',maxWidth:480,margin:'0 auto',overflow:'hidden',height:480*orbitScale+32}}>
+        <div style={{
+          position:'relative',width:480,height:480,
+          left:'50%',
+          transform:`translateX(-50%) scale(${orbitScale})`,
+          transformOrigin:'top center'
+        }}>
         <div style={{position:'absolute',inset:0,borderRadius:'50%',background:'radial-gradient(circle,rgba(56,182,255,0.07),transparent 65%)',opacity:diActive?1:0,transition:'opacity 1.2s',pointerEvents:'none'}}/>
 
         <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none'}} viewBox="0 0 480 480">
@@ -4061,7 +4082,8 @@ function DigitalIntuitionBlock() {
           ))}
           <div style={{position:'relative',zIndex:2,width:50,height:50,borderRadius:'50%',background:'radial-gradient(circle,#000 55%,#041020 100%)',boxShadow:diActive?'0 0 20px rgba(56,182,255,0.5)':'none',transition:'box-shadow 1s',animation:diActive?'diPulse 3s ease-in-out infinite':'none'}}/>
         </div>
-      </div>
+        </div>{/* close inner 480×480 */}
+      </div>{/* close orbitRef outer wrapper */}
 
       <div style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center'}}>
         {['Передбачення контексту','Контекстні сигнали','Швидкі рішення','Синергія сервісів'].map((f,i)=>(
@@ -4386,6 +4408,11 @@ function OneSpacePage(){
 
         <hr style={{borderColor:'rgba(56,182,255,.1)',margin:'60px 0 40px'}}/>
 
+        {/* ══════ DIGITAL INTUITION ══════ */}
+        <DigitalIntuitionBlock/>
+
+        <hr style={{borderColor:'rgba(56,182,255,.1)',margin:'40px 0'}}/>
+
         {/* ══════ ACADEMY OF PLATFORM-BASED ECONOMY - CENTERED ══════ */}
         <div className="os-academy" style={{maxWidth:1100,margin:'0 auto'}}>
         <div style={{background:'var(--surf)',border:'1px solid var(--bord)',padding:'40px clamp(16px,4vw,36px)'}}>
@@ -4455,13 +4482,6 @@ function OneSpacePage(){
           </div>
         </div>
       </div>
-
-      <hr style={{borderColor:'rgba(56,182,255,.1)',margin:'60px 0 40px'}}/>
-
-      {/* ══════ DIGITAL INTUITION ══════ */}
-      <DigitalIntuitionBlock/>
-
-      <hr style={{borderColor:'rgba(56,182,255,.1)',margin:'0 0 40px'}}/>
 
     </div>
   );
