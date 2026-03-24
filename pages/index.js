@@ -3538,6 +3538,58 @@ function SectionHeader({tag,title,sub}){
 }
 
 /* ═══════════ HOME PAGE ═══════════ */
+function BitbonPriceWidget(){
+  const [data,setData]=useState(null);
+  const [err,setErr]=useState(false);
+  const CONTRACT='0x5702A4487dA07c827cdE512e2d5969CB430cd839';
+
+  useEffect(()=>{
+    const fetch_=async()=>{
+      try{
+        const r=await fetch(`https://api.dexscreener.com/latest/dex/tokens/${CONTRACT}`);
+        const j=await r.json();
+        const pairs=(j.pairs||[]).filter(p=>p.chainId==='ethereum');
+        if(!pairs.length){setErr(true);return;}
+        pairs.sort((a,b)=>(b.liquidity?.usd||0)-(a.liquidity?.usd||0));
+        setData(pairs[0]);
+        setErr(false);
+      }catch{setErr(true);}
+    };
+    fetch_();
+    const id=setInterval(fetch_,30000);
+    return()=>clearInterval(id);
+  },[]);
+
+  const chg=data?parseFloat(data.priceChange?.h24||0):null;
+  const positive=chg>=0;
+
+  return(
+    <div style={{marginTop:20,display:'inline-flex',alignItems:'center',gap:12,
+      background:'rgba(56,182,255,.07)',border:'1px solid rgba(56,182,255,.2)',
+      borderRadius:8,padding:'10px 20px',fontSize:13}}>
+      <span style={{display:'flex',alignItems:'center',gap:6}}>
+        <span style={{width:7,height:7,borderRadius:'50%',background:'#38b6ff',
+          boxShadow:'0 0 8px rgba(56,182,255,.8)',
+          animation:'bbPulse 1.4s ease-in-out infinite'}}/>
+        <span style={{color:'var(--muted)',fontFamily:"'JetBrains Mono',monospace",letterSpacing:1,fontSize:11}}>LIVE</span>
+      </span>
+      <span style={{color:'var(--muted)',fontSize:12}}>Bitbon (BBT)</span>
+      {err&&<span style={{color:'var(--muted)',fontSize:12}}>—</span>}
+      {!err&&!data&&<span style={{color:'var(--muted)',fontSize:12}}>...</span>}
+      {data&&<>
+        <span style={{color:'var(--white)',fontWeight:700,fontFamily:"'JetBrains Mono',monospace",fontSize:15}}>
+          ${parseFloat(data.priceUsd).toFixed(4)}
+        </span>
+        {chg!==null&&<span style={{color:positive?'#22c55e':'#ef4444',fontWeight:600,fontSize:12}}>
+          {positive?'▲':'▼'} {Math.abs(chg).toFixed(2)}%
+        </span>}
+        <span style={{color:'var(--muted)',fontSize:11}}>24h</span>
+      </>}
+      <style>{`@keyframes bbPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}}`}</style>
+    </div>
+  );
+}
+
 function HomePage({setPage}){
   const cards=[
     {icon:'🔗',title:'Система Bitbon',color:'var(--acc)',page:'system',
@@ -3574,6 +3626,7 @@ function HomePage({setPage}){
           <button className="btn-p" onClick={()=>setPage('token')}>Купити Bitbon</button>
           <button className="btn-o" onClick={()=>setPage('system')}>Дізнатись більше</button>
         </div>
+        <BitbonPriceWidget/>
         <div className="hero-stats">
           <div>
             <div className="stat-n">100M</div>
