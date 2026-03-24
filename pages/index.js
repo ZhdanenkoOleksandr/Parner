@@ -37,6 +37,84 @@ const translations = {
         text: "Найкращий час для входу в трансформаційну технологію — на старті. Другий найкращий час — зараз.",
         author: "— Олександр Жданенко"
       }
+    },
+    pages: {
+      nav: { partner: "ПАРТНЕР", consultation: "Консультація" },
+      labels: {
+        home: "Головна", system: "Система Bitbon", token: "Цифровий актив Bitbon",
+        onespace: "OneSpace", metaresources: "Метаресурси", cases: "Web 4.0", contact: "Контакт"
+      },
+      home: {
+        heroLabel: "▸ Ласкаво просимо до епохи Web 4.0",
+        heroDesc: "Екосистема соціально-економічних відносин нового покоління.\nТокенізація. Децентралізація. Репутація. Цифрова власність.",
+        buyBtn: "Купити Bitbon", learnBtn: "Дізнатись більше",
+        stat1: "Токенів Bitbon", stat2: "Базових сервісів", stat3: "Сервісів користувачів", stat4: "Мін. потенціал Web4",
+        overviewTag: "Огляд", overviewTitle: "Що тут знайдете",
+        overviewSub: "Обирайте розділ, щоб дізнатись детальніше про кожну частину екосистеми",
+        learnMore: "Дізнатись більше →",
+        cards: [
+          { title: "Система Bitbon", text: "Децентралізована платформа токенізації соціально-економічних відносин між державою, бізнесом та громадянами." },
+          { title: "Цифровий актив Bitbon", text: "Цифровий актив з фіксованою емісією 100 млн одиниць. Дефляційна модель, мінімальний потенціал ×240 у Web4." },
+          { title: "OneSpace", text: "30+ базових сервісів: репутація, токенізація, криптообмін, маркетплейс, ШІ-асистент та 1000+ сервісів від спільноти." },
+          { title: "Web 4.0", text: "Архітектура нової цифрової епохи — децентралізація, довіра, репутація та цифрова власність як основа Web 4.0." },
+          { title: "Метаресурси", text: "Цифрові метаресурси Bitbon System — токенізація бізнесу, активів та проєктів у єдиній децентралізованій екосистемі." },
+          { title: "Консультація", text: "Запишіться на безкоштовну консультацію. Дізнайтесь як придбати токен та стати частиною екосистеми Web4." }
+        ]
+      },
+      system: {
+        tag: "Екосистема", title: "Система Bitbon",
+        sub: "Платформа для токенізації соціально-економічних відносин між державою, бізнесом та громадянами — перший у світі продукт, проект та стартап такого масштабу",
+        features: [
+          { t: "Соціально-економічна інтеграція", d: "Об'єднує державу, бізнес та громадян в єдину платформу для прозорої взаємодії та справедливого розподілу економічної вигоди." },
+          { t: "Комплексна токенізація", d: "Інструменти цифровізації будь-яких активів: документів, прав, ресурсів — із фіксацією в розподіленому реєстрі блокчейну." },
+          { t: "Токенізація документів", d: "Посвідчення документів і ведення документообігу в цифровому форматі з юридичною силою та захистом від підробок." },
+          { t: "Токенізація правовідносин", d: "Посвідчення правочинів із майновими та особистими немайновими правами з автоматичним виконанням умов." },
+          { t: "Токенізація ресурсів", d: "Створення цифрового доступу до об'єктів правовідносин: нерухомості, бізнес-активів, інтелектуальної власності." },
+          { t: "Прозорість і репутація", d: "Кожна дія фіксується й верифікується — забезпечується репутаційний рейтинг (АУРА) та захист учасників від шахрайства." },
+          { t: "Децентралізація", d: "Економіко-правова та технологічна децентралізація через мережу Провайдерів-Реєстраторів та блокчейн-технологію." },
+          { t: "Фінтех для банків", d: "Система надає фінансовим установам інструменти для створення та інтеграції нових фінтех-продуктів в екосистему." },
+          { t: "Нові професії", d: "20+ цифрових професій у системі: архітектор екосистем, оператор, експерт з токенізації, промт-інженер, IT-архітектор, розробник метаресурсів та інші." }
+        ],
+        rolesTag: "Учасники", rolesTitle: "Ролі в екосистемі",
+        roles: [
+          { b: "Споживач", t: "Споживач послуг", d: "Взаємодіє із Системою на рівні отримання готових послуг. Може користуватися маркетплейсами, купувати товари без обов'язкового токена." },
+          { b: "Користувач", t: "Користувач сервісів", d: "Активний учасник з цифровим активом Bitbon. Виконує ролі в децентралізованій структурі, отримує додатковий економічний ефект від участі." },
+          { b: "Постачальник", t: "Постачальник послуг", d: "Надає товари та послуги через токенізацію та метаресурси. Реєструє пропозиції як метадокументи та метаконтракти." }
+        ],
+        professionsTag: "Карʼєра в Web4", professionsTitle: "Цифрові професії",
+        professionsSub: "перші 8 унікальних ролей у системі Bitbon для експертів, підприємців та спеціалістів"
+      },
+      token: {
+        tag: "Цифровий актив", title: "Цифровий актив Bitbon",
+        sub: "Право доступу до екосистеми через цифровий актив з обмеженою емісією та дефляційною моделлю",
+        whyTitle: "Чому Bitbon?",
+        desc1: "Bitbon — цифровий актив, забезпечений інфраструктурою та механізмами управління немонетарними активами. Він виконує ключову функцію в децентралізованій Системі Bitbon, об'єднуючи користувачів, бізнес, громадські ініціативи та токенізовані активи в єдину економіку.",
+        desc2: "Система Bitbon поєднує реальний сектор економіки з Web4.0 — відкриваючи безмежні можливості капіталізації та збільшення ціни токена.",
+        desc3highlight: "додатковий випуск токенів неможливий",
+        desc3: "Згідно з «Публічним Контрактом» Системи Bitbon — додатковий випуск токенів неможливий. Фіксована емісія 100 000 000 одиниць у поєднанні зі зростанням попиту формує дефляційну модель.",
+        factors: [
+          "Збільшення кількості постачальників послуг", "Збільшення кількості споживачів послуг",
+          "Збільшення кількості сервісів в екосистемі", "Фіксована емісія — 100 000 000 одиниць",
+          "Дефляційна економічна модель", "Сервісний збір у токенах Bitbon за кожну дію в системі"
+        ],
+        metricsLabels: ["ЗАГАЛЬНА ЕМІСІЯ", "ДОДАТКОВА ЕМІСІЯ", "МІН. ПОТЕНЦІАЛ WEB4", "ЗВ'ЯЗОК З РЕАЛЬНИМ СЕКТОРОМ", "ЦІНА ВХОДУ (ОРІЄНТОВНО)", "РОЗРАХУНКОВИЙ ЕФЕКТ ($1000)"],
+        metricsValues: ["100 000 000", "НЕМОЖЛИВА", "×240", "$300T+", "від $3", "$80 000+"],
+        buyBtn: "Придбати Bitbon →",
+        epochsTag: "Інвестиційні цикли", epochsTitle: "Індустрія 4.0",
+        epochsSub: "Кожна епоха — унікальне вікно можливостей. Web4 відкрите прямо зараз.",
+        epochs: [
+          { lbl: "Відкрита інформація", desc: "Статичні сайти і перші онлайн-бізнеси. Хто побачив потенціал — стояв біля витоків цифрової революції." },
+          { lbl: "Цифрова взаємодія", desc: "Соцмережі, YouTube, App Store. Користувач став співавтором цифрової реальності та джерелом контенту." },
+          { lbl: "Цифрова власність", desc: "Блокчейн і токени зробили людей власниками цифрових активів. Нова форма довіри і децентралізована економіка." },
+          { lbl: "Штучний інтелект", desc: "ШІ, токенізація, платформна економіка. Якісно новий рівень соціально-економічних відносин через Інтернет." }
+        ],
+        formulaTag: "▸ Розрахунок інвестиційного ефекту", formulaTitle: "Формула Web4",
+        formulaNote: "При інвестиції $1 000 на старті Web4 · Потенціал ×240 · Ціна входу $3",
+        conclusionTitle: "Хто входить на старті трансформаційної технології — отримує максимум",
+        conclusionDesc: "Web4 — наступна трансформація. Bitbon System — інфраструктура, що вже функціонує. Момент входу — зараз, поки ціна активу формується на старті.",
+        consultBtn: "Записатись на консультацію →"
+      },
+      footer: { partner: "ПАРТНЕР", consultation: "Консультація", toast: "✓ Заявку надіслано! Очікуйте зв'язку." }
     }
   },
   
@@ -75,6 +153,84 @@ const translations = {
         text: "The best time to enter transformational technology is at the start. The second best time is now.",
         author: "— Oleksandr Zhdanenko"
       }
+    },
+    pages: {
+      nav: { partner: "PARTNER", consultation: "Consultation" },
+      labels: {
+        home: "Home", system: "Bitbon System", token: "Bitbon Digital Asset",
+        onespace: "OneSpace", metaresources: "Metaresources", cases: "Web 4.0", contact: "Contact"
+      },
+      home: {
+        heroLabel: "▸ Welcome to the Web 4.0 era",
+        heroDesc: "Next-generation socio-economic relations ecosystem.\nTokenization. Decentralization. Reputation. Digital Ownership.",
+        buyBtn: "Buy Bitbon", learnBtn: "Learn More",
+        stat1: "Bitbon Tokens", stat2: "Core Services", stat3: "User Services", stat4: "Min. Web4 Potential",
+        overviewTag: "Overview", overviewTitle: "What you'll find here",
+        overviewSub: "Choose a section to learn more about each part of the ecosystem",
+        learnMore: "Learn more →",
+        cards: [
+          { title: "Bitbon System", text: "Decentralized platform for tokenization of socio-economic relations between the state, business and citizens." },
+          { title: "Bitbon Digital Asset", text: "Digital asset with a fixed emission of 100M units. Deflationary model, minimum potential ×240 in Web4." },
+          { title: "OneSpace", text: "30+ core services: reputation, tokenization, crypto exchange, marketplace, AI assistant and 1000+ community services." },
+          { title: "Web 4.0", text: "Architecture of the new digital era — decentralization, trust, reputation and digital ownership as the foundation of Web 4.0." },
+          { title: "Metaresources", text: "Bitbon System digital metaresources — tokenization of business, assets and projects in a unified decentralized ecosystem." },
+          { title: "Consultation", text: "Book a free consultation. Learn how to purchase tokens and become part of the Web4 ecosystem." }
+        ]
+      },
+      system: {
+        tag: "Ecosystem", title: "Bitbon System",
+        sub: "Platform for tokenization of socio-economic relations between the state, business and citizens — the world's first product, project and startup of this scale",
+        features: [
+          { t: "Socio-Economic Integration", d: "Unites the state, business and citizens into a single platform for transparent interaction and fair distribution of economic benefits." },
+          { t: "Comprehensive Tokenization", d: "Tools for digitizing any assets: documents, rights, resources — with recording in the distributed blockchain registry." },
+          { t: "Document Tokenization", d: "Certification of documents and document management in digital format with legal force and protection against forgery." },
+          { t: "Legal Relations Tokenization", d: "Certification of transactions with property and personal non-property rights with automatic execution of conditions." },
+          { t: "Resource Tokenization", d: "Creating digital access to objects of legal relations: real estate, business assets, intellectual property." },
+          { t: "Transparency & Reputation", d: "Every action is recorded and verified — ensuring a reputation rating (AURA) and protecting participants from fraud." },
+          { t: "Decentralization", d: "Economic-legal and technological decentralization through a network of Provider-Registrars and blockchain technology." },
+          { t: "Fintech for Banks", d: "The system provides financial institutions with tools to create and integrate new fintech products into the ecosystem." },
+          { t: "New Professions", d: "20+ digital professions in the system: ecosystem architect, operator, tokenization expert, prompt engineer, IT architect, metaresource developer and others." }
+        ],
+        rolesTag: "Participants", rolesTitle: "Roles in the Ecosystem",
+        roles: [
+          { b: "Consumer", t: "Service Consumer", d: "Interacts with the System at the level of receiving ready-made services. Can use marketplaces, buy goods without a mandatory token." },
+          { b: "User", t: "Service User", d: "Active participant with a Bitbon digital asset. Performs roles in the decentralized structure, receives additional economic effect from participation." },
+          { b: "Provider", t: "Service Provider", d: "Provides goods and services through tokenization and metaresources. Registers offers as metadocuments and metacontracts." }
+        ],
+        professionsTag: "Web4 Career", professionsTitle: "Digital Professions",
+        professionsSub: "first 8 unique roles in the Bitbon system for experts, entrepreneurs and specialists"
+      },
+      token: {
+        tag: "Digital Asset", title: "Bitbon Digital Asset",
+        sub: "Access right to the ecosystem through a digital asset with limited emission and deflationary model",
+        whyTitle: "Why Bitbon?",
+        desc1: "Bitbon is a digital asset backed by infrastructure and non-monetary asset management mechanisms. It performs a key function in the decentralized Bitbon System, uniting users, businesses, public initiatives and tokenized assets into a single economy.",
+        desc2: "The Bitbon System connects the real economy sector with Web4.0 — opening unlimited opportunities for capitalization and token price growth.",
+        desc3highlight: "additional token issuance is impossible",
+        desc3: "According to the Bitbon System 'Public Contract' — additional token issuance is impossible. Fixed emission of 100,000,000 units combined with growing demand forms a deflationary model.",
+        factors: [
+          "Increasing number of service providers", "Increasing number of service consumers",
+          "Increasing number of services in the ecosystem", "Fixed emission — 100,000,000 units",
+          "Deflationary economic model", "Service fee in Bitbon tokens for each action in the system"
+        ],
+        metricsLabels: ["TOTAL EMISSION", "ADDITIONAL EMISSION", "MIN. WEB4 POTENTIAL", "REAL SECTOR CONNECTION", "ENTRY PRICE (EST.)", "CALCULATED EFFECT ($1000)"],
+        metricsValues: ["100 000 000", "IMPOSSIBLE", "×240", "$300T+", "from $3", "$80,000+"],
+        buyBtn: "Buy Bitbon →",
+        epochsTag: "Investment Cycles", epochsTitle: "Industry 4.0",
+        epochsSub: "Each epoch is a unique window of opportunity. Web4 is open right now.",
+        epochs: [
+          { lbl: "Open Information", desc: "Static sites and first online businesses. Those who saw the potential stood at the origins of the digital revolution." },
+          { lbl: "Digital Interaction", desc: "Social networks, YouTube, App Store. The user became a co-author of digital reality and a source of content." },
+          { lbl: "Digital Ownership", desc: "Blockchain and tokens made people owners of digital assets. A new form of trust and decentralized economy." },
+          { lbl: "Artificial Intelligence", desc: "AI, tokenization, platform economy. A qualitatively new level of socio-economic relations via the Internet." }
+        ],
+        formulaTag: "▸ Investment Effect Calculation", formulaTitle: "Web4 Formula",
+        formulaNote: "With a $1,000 investment at the start of Web4 · Potential ×240 · Entry price $3",
+        conclusionTitle: "Those who enter at the start of transformational technology — get the maximum",
+        conclusionDesc: "Web4 is the next transformation. Bitbon System is infrastructure that is already functioning. The moment to enter is now, while the asset price is forming at the start.",
+        consultBtn: "Book a consultation →"
+      },
+      footer: { partner: "PARTNER", consultation: "Consultation", toast: "✓ Application sent! Expect contact soon." }
     }
   },
   
@@ -113,6 +269,84 @@ const translations = {
         text: "Лучшее время для входа в трансформационную технологию — на старте. Второе лучшее время — сейчас.",
         author: "— Александр Жданенко"
       }
+    },
+    pages: {
+      nav: { partner: "ПАРТНЁР", consultation: "Консультация" },
+      labels: {
+        home: "Главная", system: "Система Bitbon", token: "Цифровой актив Bitbon",
+        onespace: "OneSpace", metaresources: "Метаресурсы", cases: "Web 4.0", contact: "Контакт"
+      },
+      home: {
+        heroLabel: "▸ Добро пожаловать в эпоху Web 4.0",
+        heroDesc: "Экосистема социально-экономических отношений нового поколения.\nТокенизация. Децентрализация. Репутация. Цифровая собственность.",
+        buyBtn: "Купить Bitbon", learnBtn: "Узнать больше",
+        stat1: "Токенов Bitbon", stat2: "Базовых сервисов", stat3: "Сервисов пользователей", stat4: "Мин. потенциал Web4",
+        overviewTag: "Обзор", overviewTitle: "Что здесь найдёте",
+        overviewSub: "Выберите раздел, чтобы узнать подробнее о каждой части экосистемы",
+        learnMore: "Узнать больше →",
+        cards: [
+          { title: "Система Bitbon", text: "Децентрализованная платформа токенизации социально-экономических отношений между государством, бизнесом и гражданами." },
+          { title: "Цифровой актив Bitbon", text: "Цифровой актив с фиксированной эмиссией 100 млн единиц. Дефляционная модель, минимальный потенциал ×240 в Web4." },
+          { title: "OneSpace", text: "30+ базовых сервисов: репутация, токенизация, криптообмен, маркетплейс, ИИ-ассистент и 1000+ сервисов сообщества." },
+          { title: "Web 4.0", text: "Архитектура новой цифровой эпохи — децентрализация, доверие, репутация и цифровая собственность как основа Web 4.0." },
+          { title: "Метаресурсы", text: "Цифровые метаресурсы Bitbon System — токенизация бизнеса, активов и проектов в единой децентрализованной экосистеме." },
+          { title: "Консультация", text: "Запишитесь на бесплатную консультацию. Узнайте как приобрести токен и стать частью экосистемы Web4." }
+        ]
+      },
+      system: {
+        tag: "Экосистема", title: "Система Bitbon",
+        sub: "Платформа для токенизации социально-экономических отношений между государством, бизнесом и гражданами — первый в мире продукт, проект и стартап такого масштаба",
+        features: [
+          { t: "Социально-экономическая интеграция", d: "Объединяет государство, бизнес и граждан в единую платформу для прозрачного взаимодействия и справедливого распределения экономической выгоды." },
+          { t: "Комплексная токенизация", d: "Инструменты цифровизации любых активов: документов, прав, ресурсов — с фиксацией в распределённом реестре блокчейна." },
+          { t: "Токенизация документов", d: "Удостоверение документов и ведение документооборота в цифровом формате с юридической силой и защитой от подделок." },
+          { t: "Токенизация правоотношений", d: "Удостоверение сделок с имущественными и личными неимущественными правами с автоматическим исполнением условий." },
+          { t: "Токенизация ресурсов", d: "Создание цифрового доступа к объектам правоотношений: недвижимости, бизнес-активам, интеллектуальной собственности." },
+          { t: "Прозрачность и репутация", d: "Каждое действие фиксируется и верифицируется — обеспечивается репутационный рейтинг (АУРА) и защита участников от мошенничества." },
+          { t: "Децентрализация", d: "Экономико-правовая и технологическая децентрализация через сеть Провайдеров-Регистраторов и блокчейн-технологию." },
+          { t: "Финтех для банков", d: "Система предоставляет финансовым учреждениям инструменты для создания и интеграции новых финтех-продуктов в экосистему." },
+          { t: "Новые профессии", d: "20+ цифровых профессий в системе: архитектор экосистем, оператор, эксперт по токенизации, промт-инженер, IT-архитектор, разработчик метаресурсов и другие." }
+        ],
+        rolesTag: "Участники", rolesTitle: "Роли в экосистеме",
+        roles: [
+          { b: "Потребитель", t: "Потребитель услуг", d: "Взаимодействует с Системой на уровне получения готовых услуг. Может пользоваться маркетплейсами, покупать товары без обязательного токена." },
+          { b: "Пользователь", t: "Пользователь сервисов", d: "Активный участник с цифровым активом Bitbon. Выполняет роли в децентрализованной структуре, получает дополнительный экономический эффект от участия." },
+          { b: "Поставщик", t: "Поставщик услуг", d: "Предоставляет товары и услуги через токенизацию и метаресурсы. Регистрирует предложения как метадокументы и метаконтракты." }
+        ],
+        professionsTag: "Карьера в Web4", professionsTitle: "Цифровые профессии",
+        professionsSub: "первые 8 уникальных ролей в системе Bitbon для экспертов, предпринимателей и специалистов"
+      },
+      token: {
+        tag: "Цифровой актив", title: "Цифровой актив Bitbon",
+        sub: "Право доступа к экосистеме через цифровой актив с ограниченной эмиссией и дефляционной моделью",
+        whyTitle: "Почему Bitbon?",
+        desc1: "Bitbon — цифровой актив, обеспеченный инфраструктурой и механизмами управления немонетарными активами. Он выполняет ключевую функцию в децентрализованной Системе Bitbon, объединяя пользователей, бизнес, общественные инициативы и токенизированные активы в единую экономику.",
+        desc2: "Система Bitbon соединяет реальный сектор экономики с Web4.0 — открывая безграничные возможности капитализации и роста цены токена.",
+        desc3highlight: "дополнительный выпуск токенов невозможен",
+        desc3: "Согласно «Публичному Контракту» Системы Bitbon — дополнительный выпуск токенов невозможен. Фиксированная эмиссия 100 000 000 единиц в сочетании с ростом спроса формирует дефляционную модель.",
+        factors: [
+          "Увеличение числа поставщиков услуг", "Увеличение числа потребителей услуг",
+          "Увеличение числа сервисов в экосистеме", "Фиксированная эмиссия — 100 000 000 единиц",
+          "Дефляционная экономическая модель", "Сервисный сбор в токенах Bitbon за каждое действие в системе"
+        ],
+        metricsLabels: ["ОБЩАЯ ЭМИССИЯ", "ДОП. ЭМИССИЯ", "МИН. ПОТЕНЦИАЛ WEB4", "СВЯЗЬ С РЕАЛЬНЫМ СЕКТОРОМ", "ЦЕНА ВХОДА (ОРИЕНТ.)", "РАСЧЁТНЫЙ ЭФФЕКТ ($1000)"],
+        metricsValues: ["100 000 000", "НЕВОЗМОЖНА", "×240", "$300T+", "от $3", "$80 000+"],
+        buyBtn: "Приобрести Bitbon →",
+        epochsTag: "Инвестиционные циклы", epochsTitle: "Индустрия 4.0",
+        epochsSub: "Каждая эпоха — уникальное окно возможностей. Web4 открыто прямо сейчас.",
+        epochs: [
+          { lbl: "Открытая информация", desc: "Статичные сайты и первые онлайн-бизнесы. Кто увидел потенциал — стоял у истоков цифровой революции." },
+          { lbl: "Цифровое взаимодействие", desc: "Соцсети, YouTube, App Store. Пользователь стал соавтором цифровой реальности и источником контента." },
+          { lbl: "Цифровая собственность", desc: "Блокчейн и токены сделали людей владельцами цифровых активов. Новая форма доверия и децентрализованная экономика." },
+          { lbl: "Искусственный интеллект", desc: "ИИ, токенизация, платформенная экономика. Качественно новый уровень социально-экономических отношений через Интернет." }
+        ],
+        formulaTag: "▸ Расчёт инвестиционного эффекта", formulaTitle: "Формула Web4",
+        formulaNote: "При инвестиции $1 000 на старте Web4 · Потенциал ×240 · Цена входа $3",
+        conclusionTitle: "Кто входит на старте трансформационной технологии — получает максимум",
+        conclusionDesc: "Web4 — следующая трансформация. Bitbon System — инфраструктура, которая уже функционирует. Момент входа — сейчас, пока цена актива формируется на старте.",
+        consultBtn: "Записаться на консультацию →"
+      },
+      footer: { partner: "ПАРТНЁР", consultation: "Консультация", toast: "✓ Заявка отправлена! Ожидайте связи." }
     }
   }
 };
@@ -185,6 +419,43 @@ function useMobileMenu(){
   return [open,setOpen];
 }
 
+/* ─────────── LANGUAGE HOOK ─────────── */
+function useLanguage() {
+  const [lang, setLang] = useState(() => {
+    if (typeof window === 'undefined') return 'uk';
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang && ['uk', 'en', 'ru'].includes(urlLang)) return urlLang;
+    const saved = localStorage.getItem('preferred-language');
+    if (saved && ['uk', 'en', 'ru'].includes(saved)) return saved;
+    const browserLang = navigator.language.toLowerCase();
+    if (browserLang.startsWith('uk')) return 'uk';
+    if (browserLang.startsWith('ru')) return 'ru';
+    return 'uk';
+  });
+  useEffect(() => {
+    localStorage.setItem('preferred-language', lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
+  return [lang, setLang, translations[lang]];
+}
+
+/* ─────────── LANGUAGE SWITCHER ─────────── */
+function LanguageSwitcher({lang, setLang}) {
+  const flags = { uk: '\u{1F1FA}\u{1F1E6}', en: '\u{1F1EC}\u{1F1E7}', ru: '\u{1F1F7}\u{1F1FA}' };
+  const names = { uk: 'UA', en: 'EN', ru: 'RU' };
+  return (
+    <div className="lang-switcher">
+      {['uk', 'en', 'ru'].map(l => (
+        <button key={l} className={`lang-btn ${lang === l ? 'active' : ''}`}
+          onClick={() => setLang(l)} title={names[l]}>
+          <span className="lang-flag">{flags[l]}</span>
+          <span className="lang-code">{names[l]}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
 
 /* ─────────── GLOBAL STYLES ─────────── */
 const G = `
@@ -3655,6 +3926,8 @@ const PAGE_LABELS = {
 function Nav({page,setPage}){
   const scrolled = useScrolled();
   const [mobileMenuOpen,setMobileMenuOpen]=useMobileMenu();
+  const [lang, setLang, t] = useLanguage();
+  const labels = t && t.pages && t.pages.labels ? t.pages.labels : PAGE_LABELS;
   return(
     <>
     <nav className={`nav${scrolled?' scrolled':''}`}>
@@ -3663,7 +3936,9 @@ function Nav({page,setPage}){
           <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
           <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
         </div>
-        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:4,lineHeight:1}}>ПАРТНЕР</div>
+        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:4,lineHeight:1}}>
+          {t && t.pages ? t.pages.nav.partner : 'ПАРТНЕР'}
+        </div>
       </div>
       
         <button 
@@ -3679,16 +3954,21 @@ function Nav({page,setPage}){
         <div className={`nav-links ${mobileMenuOpen?'open':''}`}>
         {PAGES.filter(p=>p!=='home').map(p=>(
           <span key={p} className={`nav-link${page===p?' active':''}`} onClick={()=>{setPage(p);setMobileMenuOpen(false);}}>
-            {PAGE_LABELS[p]}
+            {labels[p] || PAGE_LABELS[p]}
           </span>
         ))}
       </div>
-      <div style={{flexShrink:0,textAlign:'right'}}>
-        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap',cursor:'pointer'}} onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
-          Oleksandr Zhdanenko
-        </div>
-        <div style={{marginTop:4,display:'flex',justifyContent:'flex-end'}}>
-          <button className="nav-cta" onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>Консультація</button>
+      <div style={{flexShrink:0,textAlign:'right',display:'flex',alignItems:'center',gap:12}}>
+        <LanguageSwitcher lang={lang} setLang={setLang}/>
+        <div>
+          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap',cursor:'pointer'}} onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
+            Oleksandr Zhdanenko
+          </div>
+          <div style={{marginTop:4,display:'flex',justifyContent:'flex-end'}}>
+            <button className="nav-cta" onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
+              {t ? t.nav.consultation : 'Консультація'}
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -3719,8 +3999,9 @@ function SectionHeader({tag,title,sub}){
 }
 
 /* ═══════════ HOME PAGE ═══════════ */
-function HomePage({setPage}){
-  const cards=[
+function HomePage({setPage, t}){
+  const ph = t && t.pages && t.pages.home;
+  const defaultCards=[
     {icon:'🔗',title:'Система Bitbon',color:'var(--acc)',page:'system',
       text:'Децентралізована платформа токенізації соціально-економічних відносин між державою, бізнесом та громадянами.'},
     {icon:'💎',title:'Цифровий актив Bitbon',color:'var(--acc2)',page:'token',
@@ -3734,6 +4015,12 @@ function HomePage({setPage}){
     {icon:'📩',title:'Консультація',color:'var(--acc)',page:'contact',
       text:'Запишіться на безкоштовну консультацію. Дізнайтесь як придбати токен та стати частиною екосистеми Web4.'},
   ];
+  const cardIcons=['🔗','💎','📱','🌐','🧊','📩'];
+  const cardColors=['var(--acc)','var(--acc2)','var(--acc3)','#ff6b6b','#a8e6cf','var(--acc)'];
+  const cardPages=['system','token','onespace','cases','metaresources','contact'];
+  const cards = ph && ph.cards
+    ? ph.cards.map((c,i)=>({...c, icon:cardIcons[i], color:cardColors[i], page:cardPages[i]}))
+    : defaultCards;
 
   return(
     <div className="page">
@@ -3743,34 +4030,33 @@ function HomePage({setPage}){
         <div className="hero-ring"/>
         <div className="hero-ring2"/>
         <div className="hero-ring3"/>
-        <div className="hero-label">▸ Ласкаво просимо до епохи Web 4.0</div>
+        <div className="hero-label">{ph ? ph.heroLabel : '▸ Ласкаво просимо до епохи Web 4.0'}</div>
         <h1 className="hero-name">
           BITBON<br/><span>SYSTEM</span>
         </h1>
         <p className="hero-desc">
-          Екосистема соціально-економічних відносин нового покоління.<br/>
-          Токенізація. Децентралізація. Репутація. Цифрова власність.
+          {ph ? ph.heroDesc.split('\n').map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>) : <>Екосистема соціально-економічних відносин нового покоління.<br/>Токенізація. Децентралізація. Репутація. Цифрова власність.</>}
         </p>
         <div className="hero-btns">
-          <button className="btn-p" onClick={()=>setPage('token')}>Купити Bitbon</button>
-          <button className="btn-o" onClick={()=>setPage('system')}>Дізнатись більше</button>
+          <button className="btn-p" onClick={()=>setPage('token')}>{ph ? ph.buyBtn : 'Купити Bitbon'}</button>
+          <button className="btn-o" onClick={()=>setPage('system')}>{ph ? ph.learnBtn : 'Дізнатись більше'}</button>
         </div>
         <div className="hero-stats">
           <div>
             <div className="stat-n">100M</div>
-            <div className="stat-l">Токенів Bitbon</div>
+            <div className="stat-l">{ph ? ph.stat1 : 'Токенів Bitbon'}</div>
           </div>
           <div>
             <div className="stat-n">30+</div>
-            <div className="stat-l">Базових сервісів</div>
+            <div className="stat-l">{ph ? ph.stat2 : 'Базових сервісів'}</div>
           </div>
           <div>
             <div className="stat-n">1000+</div>
-            <div className="stat-l">Сервісів користувачів</div>
+            <div className="stat-l">{ph ? ph.stat3 : 'Сервісів користувачів'}</div>
           </div>
           <div>
             <div className="stat-n">24 000%</div>
-            <div className="stat-l">Мін. потенціал Web4</div>
+            <div className="stat-l">{ph ? ph.stat4 : 'Мін. потенціал Web4'}</div>
           </div>
         </div>
       </section>
@@ -3780,8 +4066,8 @@ function HomePage({setPage}){
 
             {/* OVERVIEW CARDS */}
       <section className="section" style={{paddingTop:20}}>
-        <SectionHeader tag="Огляд" title="Що тут знайдете"
-          sub="Обирайте розділ, щоб дізнатись детальніше про кожну частину екосистеми"/>
+        <SectionHeader tag={ph ? ph.overviewTag : 'Огляд'} title={ph ? ph.overviewTitle : 'Що тут знайдете'}
+          sub={ph ? ph.overviewSub : 'Обирайте розділ, щоб дізнатись детальніше про кожну частину екосистеми'}/>
         <div className="home-sections">
           {cards.map((c,idx)=>(
             <Reveal key={c.page} delay={idx*80}>
@@ -3792,7 +4078,7 @@ function HomePage({setPage}){
               <div className="hs-title">{c.title}</div>
               <div className="hs-text">{c.text}</div>
               <button className="hs-btn" onClick={()=>setPage(c.page)}>
-                Дізнатись більше →
+                {ph ? ph.learnMore : 'Дізнатись більше →'}
               </button>
             </div>
             </Reveal>
@@ -3832,23 +4118,28 @@ function HomePage({setPage}){
 }
 
 /* ═══════════ SYSTEM PAGE ═══════════ */
-function SystemPage(){
-  const features=[
-    {icon:'🏛',t:'Соціально-економічна інтеграція',d:'Об\'єднує державу, бізнес та громадян в єдину платформу для прозорої взаємодії та справедливого розподілу економічної вигоди.'},
+function SystemPage({t}){
+  const ps = t && t.pages && t.pages.system;
+  const featureIcons=['🏛','🔗','📋','⚖️','💼','🔒','🌐','🏦','🚀'];
+  const defaultFeatures=[
+    {icon:'🏛',t:'Соціально-економічна інтеграція',d:"Об'єднує державу, бізнес та громадян в єдину платформу для прозорої взаємодії та справедливого розподілу економічної вигоди."},
     {icon:'🔗',t:'Комплексна токенізація',d:'Інструменти цифровізації будь-яких активів: документів, прав, ресурсів — із фіксацією в розподіленому реєстрі блокчейну.'},
     {icon:'📋',t:'Токенізація документів',d:'Посвідчення документів і ведення документообігу в цифровому форматі з юридичною силою та захистом від підробок.'},
     {icon:'⚖️',t:'Токенізація правовідносин',d:'Посвідчення правочинів із майновими та особистими немайновими правами з автоматичним виконанням умов.'},
-    {icon:'💼',t:'Tokenізація ресурсів',d:'Створення цифрового доступу до об\'єктів правовідносин: нерухомості, бізнес-активів, інтелектуальної власності.'},
+    {icon:'💼',t:'Tokenізація ресурсів',d:"Створення цифрового доступу до об'єктів правовідносин: нерухомості, бізнес-активів, інтелектуальної власності."},
     {icon:'🔒',t:'Прозорість і репутація',d:'Кожна дія фіксується й верифікується — забезпечується репутаційний рейтинг (АУРА) та захист учасників від шахрайства.'},
     {icon:'🌐',t:'Децентралізація',d:'Економіко-правова та технологічна децентралізація через мережу Провайдерів-Реєстраторів та блокчейн-технологію.'},
     {icon:'🏦',t:'Фінтех для банків',d:'Система надає фінансовим установам інструменти для створення та інтеграції нових фінтех-продуктів в екосистему.'},
     {icon:'🚀',t:'Нові професії',d:'20+ цифрових професій у системі: архітектор екосистем, оператор, експерт з токенізації, промт-інженер, IT-архітектор, розробник метаресурсів та інші з унікальними можливостями заробітку у Web4.'},
   ];
+  const features = ps && ps.features
+    ? ps.features.map((f,i) => ({...f, icon: featureIcons[i]}))
+    : defaultFeatures;
   return(
     <div className="page">
       <section className="section">
-        <SectionHeader tag="Екосистема" title="Система Bitbon"
-          sub="Платформа для токенізації соціально-економічних відносин між державою, бізнесом та громадянами — перший у світі продукт, проект та стартап такого масштабу"/>
+        <SectionHeader tag={ps ? ps.tag : 'Екосистема'} title={ps ? ps.title : 'Система Bitbon'}
+          sub={ps ? ps.sub : 'Платформа для токенізації соціально-економічних відносин між державою, бізнесом та громадянами — перший у світі продукт, проект та стартап такого масштабу'}/>
         <div className="grid-3">
           {features.map((f,i)=>(
             <div className="card" key={i}>
@@ -3971,12 +4262,14 @@ function SystemPage(){
 }
 
 /* ═══════════ TOKEN PAGE ═══════════ */
-function TokenPage({setPage}){
+function TokenPage({setPage, t}){
   return(
     <div className="page">
       <section className="section">
-        <SectionHeader tag="Цифровий актив" title="Цифровий актив Bitbon"
-          sub="Право доступу до екосистеми через цифровий актив з обмеженою емісією та дефляційною моделлю"/>
+        <SectionHeader
+          tag={t && t.pages && t.pages.token ? t.pages.token.tag : 'Цифровий актив'}
+          title={t && t.pages && t.pages.token ? t.pages.token.title : 'Цифровий актив Bitbon'}
+          sub={t && t.pages && t.pages.token ? t.pages.token.sub : 'Право доступу до екосистеми через цифровий актив з обмеженою емісією та дефляційною моделлю'}/>
         <div className="token-layout">
           <div>
             <h3 style={{fontFamily:"'Bebas Neue',cursive",fontSize:36,color:'var(--white)',marginBottom:16,letterSpacing:1}}>
@@ -4018,7 +4311,7 @@ function TokenPage({setPage}){
               </div>
             ))}
             <button className="btn-p" style={{clipPath:'none',marginTop:8,padding:'17px'}}
-              onClick={()=>setPage('contact')}>Придбати Bitbon →</button>
+              onClick={()=>setPage('contact')}>{t && t.pages && t.pages.token ? t.pages.token.buyBtn : 'Придбати Bitbon →'}</button>
           </div>
         </div>
       </section>
@@ -4095,14 +4388,14 @@ function TokenPage({setPage}){
         <p style={{color:'var(--muted)',fontSize:15,marginTop:20,maxWidth:700,margin:'20px auto 0',lineHeight:1.8}}>
           Web4 — наступна трансформація. Bitbon System — інфраструктура, що вже функціонує. Момент входу — зараз, поки ціна активу формується на старті.
         </p>
-        <button className="btn-p" style={{marginTop:36}} onClick={()=>setPage('contact')}>Записатись на консультацію →</button>
+        <button className="btn-p" style={{marginTop:36}} onClick={()=>setPage('contact')}>{t && t.pages && t.pages.token ? t.pages.token.consultBtn : 'Записатись на консультацію →'}</button>
       </div>
     </div>
   );
 }
 
 /* ═══════════ ONESPACE PAGE ═══════════ */
-function BitbonEcosystem(){
+function BitbonEcosystem({t}){
   const [activeCategory, setActiveCategory] = useState(null);
   const [ref, vis] = useReveal();
 
@@ -4264,7 +4557,112 @@ function BitbonEcosystem(){
 }
 
 
-function OneSpacePage(){
+/* ═══════════ DIGITAL INTUITION BLOCK ═══════════ */
+function DigitalIntuitionBlock() {
+  const [diActive, setDiActive] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setDiActive(true), 400);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const diNodes = [
+    {
+      key: 'link', label: 'Лінк', pos: {top:0,left:'50%',transform:'translateX(-50%)'},
+      icon: (
+        <svg viewBox="0 0 56 56" width="52" height="52">
+          <defs><radialGradient id="diLG" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#fde68a"/><stop offset="60%" stopColor="#f59e0b"/><stop offset="100%" stopColor="#b45309"/></radialGradient></defs>
+          <rect width="56" height="56" rx="14" fill="url(#diLG)"/>
+          <circle cx="28" cy="23" r="9" fill="none" stroke="white" strokeWidth="2.5"/>
+          <circle cx="28" cy="23" r="3.5" fill="white"/>
+          <path d="M28 14 L28 18 M28 28 L28 32 M19 23 L23 23 M33 23 L37 23" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M13 42 Q28 35 43 42" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="13" cy="41" r="3" fill="white" opacity="0.85"/><circle cx="43" cy="41" r="3" fill="white" opacity="0.85"/>
+        </svg>
+      )
+    },
+    {
+      key: 'ping', label: 'Пінг', pos: {bottom:40,left:20},
+      icon: (
+        <svg viewBox="0 0 56 56" width="52" height="52">
+          <defs><radialGradient id="diPG" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#86efac"/><stop offset="60%" stopColor="#22c55e"/><stop offset="100%" stopColor="#15803d"/></radialGradient></defs>
+          <rect width="56" height="56" rx="14" fill="url(#diPG)"/>
+          <path d="M9 32 Q9 43 19 43 L27 48 L27 43 Q39 43 39 32 L39 20 Q39 11 28 11 L19 11 Q9 11 9 20 Z" fill="white" opacity="0.92"/>
+          <circle cx="20" cy="27" r="3" fill="#15803d"/><circle cx="28" cy="27" r="3" fill="#15803d"/>
+          <circle cx="24" cy="19" r="3.5" fill="none" stroke="#15803d" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      key: 'aura', label: 'Аура', pos: {bottom:40,right:20},
+      icon: (
+        <svg viewBox="0 0 56 56" width="52" height="52">
+          <defs><radialGradient id="diAG" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#e0e7ff"/><stop offset="35%" stopColor="#a78bfa"/><stop offset="70%" stopColor="#7c3aed"/><stop offset="100%" stopColor="#4c1d95"/></radialGradient></defs>
+          <rect width="56" height="56" rx="14" fill="url(#diAG)"/>
+          <circle cx="28" cy="28" r="13" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+          <circle cx="28" cy="28" r="8" fill="none" stroke="white" strokeWidth="2"/>
+          <circle cx="28" cy="28" r="3.5" fill="white"/>
+          <circle cx="28" cy="15" r="2.5" fill="white" opacity="0.9"/><circle cx="28" cy="41" r="2.5" fill="white" opacity="0.9"/>
+          <circle cx="15" cy="28" r="2.5" fill="white" opacity="0.9"/><circle cx="41" cy="28" r="2.5" fill="white" opacity="0.9"/>
+          <circle cx="19" cy="19" r="2" fill="white" opacity="0.6"/><circle cx="37" cy="19" r="2" fill="white" opacity="0.6"/>
+          <circle cx="19" cy="37" r="2" fill="white" opacity="0.6"/><circle cx="37" cy="37" r="2" fill="white" opacity="0.6"/>
+        </svg>
+      )
+    }
+  ];
+
+  return (
+    <div style={{maxWidth:960,margin:'0 auto',padding:'0 24px 80px',textAlign:'center'}}>
+      <div style={{marginBottom:48}}>
+        <div style={{fontSize:11,fontFamily:"'JetBrains Mono',monospace",color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',fontWeight:700,marginBottom:10}}>
+          ▸ СИНЕРГІЯ СЕРВІСІВ
+        </div>
+        <h2 style={{fontSize:36,fontFamily:"'Bebas Neue',cursive",color:'var(--white)',marginBottom:12,letterSpacing:2}}>
+          Цифрова інтуїція
+        </h2>
+        <p style={{fontSize:13,color:'var(--muted)',maxWidth:460,margin:'0 auto',lineHeight:1.75}}>
+          При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.
+        </p>
+      </div>
+
+      <div style={{position:'relative',display:'flex',alignItems:'center',justifyContent:'center',minHeight:380,marginBottom:32}}>
+        <div style={{position:'absolute',width:460,height:460,borderRadius:'50%',background:'radial-gradient(circle, rgba(56,182,255,0.07), transparent 65%)',opacity:diActive?1:0,transition:'opacity 1.2s',pointerEvents:'none'}}/>
+
+        {diNodes.map((node)=>(
+          <div key={node.key} style={{
+            position:'absolute',...node.pos,
+            width:108,height:108,
+            border:'1px solid var(--bord)',borderRadius:20,
+            background:'linear-gradient(135deg,var(--surf),rgba(10,16,24,0.95))',
+            display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:6,
+            boxShadow:diActive?'0 0 22px rgba(56,182,255,0.14)':'none',
+            transition:'box-shadow 0.8s',zIndex:2
+          }}>
+            {node.icon}
+            <span style={{fontSize:9,letterSpacing:2,color:'var(--muted)',fontFamily:"'JetBrains Mono',monospace",textTransform:'uppercase'}}>{node.label}</span>
+          </div>
+        ))}
+
+        <div style={{position:'relative',zIndex:3,width:172,height:172,borderRadius:'50%',overflow:'hidden',border:'1px solid rgba(56,182,255,0.35)',boxShadow:diActive?'0 0 48px rgba(56,182,255,0.22),0 0 80px rgba(56,182,255,0.08)':'none',transition:'box-shadow 1s',display:'flex',alignItems:'center',justifyContent:'center'}}>
+          <div style={{position:'absolute',inset:0,background:'radial-gradient(circle at 50% 50%, #000 0%, #041020 18%, #0a2a4a 36%, #0d5580 50%, #0e7db5 62%, #3aabcc 74%, #7acfe0 83%, #b0e5ef 91%, #e8f8ff 100%)'}}/>
+          {Array.from({length:18}).map((_,i)=>(
+            <div key={i} style={{position:'absolute',width:'46%',height:1.5,background:'rgba(120,210,240,0.12)',transformOrigin:'0 50%',left:'50%',top:'50%',transform:`translateY(-50%) rotate(${i*20}deg)`}}/>
+          ))}
+          <div style={{position:'relative',zIndex:2,width:50,height:50,borderRadius:'50%',background:'radial-gradient(circle, #000 55%, #041020 100%)',boxShadow:diActive?'0 0 20px rgba(56,182,255,0.5)':'none',transition:'box-shadow 1s',animation:diActive?'diPulse 3s ease-in-out infinite':'none'}}/>
+        </div>
+      </div>
+
+      <div style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center'}}>
+        {['Передбачення контексту','Контекстні сигнали','Швидкі рішення','Синергія сервісів'].map((f,i)=>(
+          <div key={i} style={{border:'1px solid var(--bord)',padding:'6px 14px',fontSize:11,color:'var(--acc)',fontFamily:"'JetBrains Mono',monospace",letterSpacing:1,background:'rgba(56,182,255,0.04)',borderRadius:2}}>{f}</div>
+        ))}
+      </div>
+
+      <style>{`@keyframes diPulse{0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,182,255,0.45)}50%{transform:scale(1.14);box-shadow:0 0 32px rgba(56,182,255,0.75)}}`}</style>
+    </div>
+  );
+}
+
+function OneSpacePage({t}){
   const services=[
     {n:'АУРА',d:'Механізм розрахунку репутації на підставі взаємодії із сервісами та іншими користувачами',
       icon:<svg viewBox="0 0 56 56" width="56" height="56"><defs><linearGradient id="g0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#a78bfa"/><stop offset="100%" stopColor="#38b6ff"/></linearGradient></defs><rect width="56" height="56" rx="14" fill="url(#g0)"/><circle cx="28" cy="28" r="12" fill="none" stroke="white" strokeWidth="2.5"/><circle cx="28" cy="28" r="6" fill="none" stroke="white" strokeWidth="2"/><circle cx="28" cy="16" r="3" fill="white"/><circle cx="28" cy="40" r="3" fill="white"/><circle cx="16" cy="28" r="3" fill="white"/><circle cx="40" cy="28" r="3" fill="white"/></svg>},
@@ -4407,6 +4805,11 @@ function OneSpacePage(){
         </div>
 
         <hr style={{borderColor:'rgba(56,182,255,.1)',margin:'60px 0 40px'}}/>
+
+        {/* ══════ DIGITAL INTUITION ══════ */}
+        <DigitalIntuitionBlock/>
+
+        <hr style={{borderColor:'rgba(56,182,255,.1)',margin:'0 0 40px'}}/>
 
         {/* ══════ ACADEMY OF PLATFORM-BASED ECONOMY - CENTERED ══════ */}
         <div style={{maxWidth:1100,margin:'0 auto'}}>
@@ -4651,7 +5054,7 @@ const W4A_LAYERS = [
 ];
 
 
-function Web4Page({setPage}){
+function Web4Page({setPage, t}){
   const [ref1,vis1] = useReveal();
   const [ref2,vis2] = useReveal();
   const [ref3,vis3] = useReveal();
@@ -4962,7 +5365,7 @@ function Web4Page({setPage}){
 /* ═══════════ WEB4 PAGE — DIGITALIZATION JOURNEY ═══════════ */
 
 /* ═══════════ METARESOURCES PAGE ═══════════ */
-function MetaresourcesPage({setPage}){
+function MetaresourcesPage({setPage, t}){
   return(
     <>
       <div className="page">
@@ -5283,7 +5686,7 @@ function MetaresourcesPage({setPage}){
 }
 
 /* ═══════════ CONTACT PAGE (MERGED: ABOUT + CONTACT) ═══════════ */
-function ContactPage({setPage, showToast}){
+function ContactPage({setPage, showToast, t}){
   const [form,setForm] = useState({name:'',phone:'',telegram:'',userType:'',message:''});
   const [errors,setErrors] = useState({});
   const [sent,setSent] = useState(false);
@@ -5548,39 +5951,39 @@ function ContactPage({setPage, showToast}){
             )}
             <div className="cp-form-grid">
               <div className={`cp-f-group ${errors.name?'cp-f-error':''}`}>
-                <label className="cp-f-label">Ім'я *</label>
-                <input className="cp-f-input" value={form.name} onChange={update('name')} placeholder="Ваше ім'я"/>
+                <label className="cp-f-label">{t ? t.form.name.label : "Ім'я *"}</label>
+                <input className="cp-f-input" value={form.name} onChange={update('name')} placeholder={t ? t.form.name.placeholder : "Ваше ім'я"}/>
               </div>
               
               <div className={`cp-f-group ${errors.userType?'cp-f-error':''}`}>
-                <label className="cp-f-label">Хто ви? *</label>
+                <label className="cp-f-label">{t ? t.form.userType.label : 'Хто ви? *'}</label>
                 <select className="cp-f-input cp-f-select" value={form.userType} onChange={update('userType')}>
-                  <option value="">Оберіть варіант</option>
-                  <option value="investor">Інвестор</option>
-                  <option value="business">Бізнес (постачальник товарів та послуг)</option>
-                  <option value="partner">Партнер системи</option>
-                  <option value="user">Користувач (інтерес до товарів та сервісів Web4)</option>
+                  <option value="">{t ? t.form.userType.placeholder : 'Оберіть варіант'}</option>
+                  <option value="investor">{t ? t.form.userType.investor : 'Інвестор'}</option>
+                  <option value="business">{t ? t.form.userType.business : 'Бізнес (постачальник товарів та послуг)'}</option>
+                  <option value="partner">{t ? t.form.userType.partner : 'Партнер системи'}</option>
+                  <option value="user">{t ? t.form.userType.user : 'Користувач (інтерес до товарів та сервісів Web4)'}</option>
                 </select>
               </div>
               
               <div className={`cp-f-group ${errors.contact?'cp-f-error':''}`}>
-                <label className="cp-f-label">Телефон</label>
-                <input className="cp-f-input" value={form.phone} onChange={update('phone')} placeholder="+380 XX XXX XXXX" type="tel"/>
-                {errors.contact && <div className="cp-f-hint">Вкажіть телефон або Telegram</div>}
+                <label className="cp-f-label">{t ? t.form.phone.label : 'Телефон'}</label>
+                <input className="cp-f-input" value={form.phone} onChange={update('phone')} placeholder={t ? t.form.phone.placeholder : '+380 XX XXX XXXX'} type="tel"/>
+                {errors.contact && <div className="cp-f-hint">{t ? t.form.phone.hint : 'Вкажіть телефон або Telegram'}</div>}
               </div>
               
               <div className={`cp-f-group ${errors.contact?'cp-f-error':''}`}>
-                <label className="cp-f-label">Telegram</label>
-                <input className="cp-f-input" value={form.telegram} onChange={update('telegram')} placeholder="@username"/>
+                <label className="cp-f-label">{t ? t.form.telegram.label : 'Telegram'}</label>
+                <input className="cp-f-input" value={form.telegram} onChange={update('telegram')} placeholder={t ? t.form.telegram.placeholder : '@username'}/>
               </div>
               
               <div className="cp-f-group cp-f-full">
-                <label className="cp-f-label">Повідомлення</label>
-                <textarea className="cp-f-input cp-f-textarea" value={form.message} onChange={update('message')} placeholder="Опишіть ваше питання або тему для обговорення..." rows="4"/>
+                <label className="cp-f-label">{t ? t.form.message.label : 'Повідомлення'}</label>
+                <textarea className="cp-f-input cp-f-textarea" value={form.message} onChange={update('message')} placeholder={t ? t.form.message.placeholder : 'Опишіть ваше питання або тему для обговорення...'} rows="4"/>
               </div>
             </div>
             <button className="cp-f-submit" onClick={submit} disabled={submitting}>
-              {submitting ? 'Відправка...' : 'Надіслати заявку'}
+              {submitting ? (t ? t.form.submitting : 'Відправка...') : (t ? t.form.submit : 'Надіслати заявку')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -5598,6 +6001,7 @@ function ContactPage({setPage, showToast}){
 
 /* ═══════════ ROOT APP ═══════════ */
 export default function App(){
+  const [lang, setLang, t] = useLanguage();
   const [page,setPage]=useState('home');
   const [toast,setToast]=useState(false);
 
@@ -5606,16 +6010,18 @@ export default function App(){
 
   const renderPage=()=>{
     switch(page){
-      case 'home': return <HomePage setPage={goTo}/>;
-      case 'system': return <SystemPage/>;
-      case 'token': return <TokenPage setPage={goTo}/>;
-      case 'onespace': return <OneSpacePage/>;
-      case 'metaresources': return <MetaresourcesPage setPage={goTo}/>;
-      case 'cases': return <Web4Page setPage={goTo}/>;
-      case 'contact': return <ContactPage setPage={goTo} showToast={showToast}/>;
-      default: return <HomePage setPage={goTo}/>;
+      case 'home': return <HomePage setPage={goTo} t={t}/>;
+      case 'system': return <SystemPage t={t}/>;
+      case 'token': return <TokenPage setPage={goTo} t={t}/>;
+      case 'onespace': return <OneSpacePage t={t}/>;
+      case 'metaresources': return <MetaresourcesPage setPage={goTo} t={t}/>;
+      case 'cases': return <Web4Page setPage={goTo} t={t}/>;
+      case 'contact': return <ContactPage setPage={goTo} showToast={showToast} t={t}/>;
+      default: return <HomePage setPage={goTo} t={t}/>;
     }
   };
+
+  const fp = t && t.pages && t.pages.footer;
 
   return(
     <>
@@ -5631,18 +6037,22 @@ export default function App(){
             <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
             <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
           </div>
-          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:6,lineHeight:1}}>ПАРТНЕР</div>
+          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:6,lineHeight:1}}>
+            {fp ? fp.partner : 'ПАРТНЕР'}
+          </div>
         </div>
         <div style={{textAlign:'right'}}>
           <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap'}}>
             Oleksandr Zhdanenko
           </div>
           <div style={{marginTop:6,display:'flex',justifyContent:'flex-end'}}>
-            <button className="nav-cta" onClick={()=>goTo('contact')}>Консультація</button>
+            <button className="nav-cta" onClick={()=>goTo('contact')}>
+              {fp ? fp.consultation : 'Консультація'}
+            </button>
           </div>
         </div>
       </footer>
-      <div className={`toast${toast?' show':''}`}>✓ Заявку надіслано! Очікуйте зв'язку.</div>
+      <div className={`toast${toast?' show':''}`}>{t ? t.form.success : "✓ Заявку надіслано! Очікуйте зв'язку."}</div>
     </>
   );
 }
