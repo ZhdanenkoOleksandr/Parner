@@ -4565,11 +4565,21 @@ function DigitalIntuitionBlock() {
     return () => clearTimeout(timer);
   }, []);
 
+  const R = 155;
+  const CX = 240, CY = 240;
+  const iconSize = 96;
+  const halfIcon = iconSize / 2;
+
+  const nodePos = [0, 1, 2].map(i => {
+    const rad = (-90 + i * 120) * Math.PI / 180;
+    return { x: CX + R * Math.cos(rad), y: CY + R * Math.sin(rad) };
+  });
+
   const diNodes = [
     {
-      key: 'link', label: 'Лінк', pos: {top:0,left:'50%',transform:'translateX(-50%)'},
+      key: 'link', label: 'Лінк',
       icon: (
-        <svg viewBox="0 0 56 56" width="52" height="52">
+        <svg viewBox="0 0 56 56" width="46" height="46">
           <defs><radialGradient id="diLG" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#fde68a"/><stop offset="60%" stopColor="#f59e0b"/><stop offset="100%" stopColor="#b45309"/></radialGradient></defs>
           <rect width="56" height="56" rx="14" fill="url(#diLG)"/>
           <circle cx="28" cy="23" r="9" fill="none" stroke="white" strokeWidth="2.5"/>
@@ -4581,9 +4591,9 @@ function DigitalIntuitionBlock() {
       )
     },
     {
-      key: 'ping', label: 'Пінг', pos: {bottom:40,left:20},
+      key: 'ping', label: 'Пінг',
       icon: (
-        <svg viewBox="0 0 56 56" width="52" height="52">
+        <svg viewBox="0 0 56 56" width="46" height="46">
           <defs><radialGradient id="diPG" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#86efac"/><stop offset="60%" stopColor="#22c55e"/><stop offset="100%" stopColor="#15803d"/></radialGradient></defs>
           <rect width="56" height="56" rx="14" fill="url(#diPG)"/>
           <path d="M9 32 Q9 43 19 43 L27 48 L27 43 Q39 43 39 32 L39 20 Q39 11 28 11 L19 11 Q9 11 9 20 Z" fill="white" opacity="0.92"/>
@@ -4593,9 +4603,9 @@ function DigitalIntuitionBlock() {
       )
     },
     {
-      key: 'aura', label: 'Аура', pos: {bottom:40,right:20},
+      key: 'aura', label: 'Аура',
       icon: (
-        <svg viewBox="0 0 56 56" width="52" height="52">
+        <svg viewBox="0 0 56 56" width="46" height="46">
           <defs><radialGradient id="diAG" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#e0e7ff"/><stop offset="35%" stopColor="#a78bfa"/><stop offset="70%" stopColor="#7c3aed"/><stop offset="100%" stopColor="#4c1d95"/></radialGradient></defs>
           <rect width="56" height="56" rx="14" fill="url(#diAG)"/>
           <circle cx="28" cy="28" r="13" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
@@ -4619,35 +4629,85 @@ function DigitalIntuitionBlock() {
         <h2 style={{fontSize:36,fontFamily:"'Bebas Neue',cursive",color:'var(--white)',marginBottom:12,letterSpacing:2}}>
           Цифрова інтуїція
         </h2>
-        <p style={{fontSize:13,color:'var(--muted)',maxWidth:460,margin:'0 auto',lineHeight:1.75}}>
-          При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.
+        <p style={{fontSize:13,color:'white',maxWidth:540,margin:'0 auto',lineHeight:1.75}}>
+          здатність людини за допомогою даних, ШІ та цифрових інструментів швидко оцінювати довіру, ризики й потенціал взаємодії. При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.
         </p>
       </div>
 
-      <div style={{position:'relative',display:'flex',alignItems:'center',justifyContent:'center',minHeight:380,marginBottom:32}}>
-        <div style={{position:'absolute',width:460,height:460,borderRadius:'50%',background:'radial-gradient(circle, rgba(56,182,255,0.07), transparent 65%)',opacity:diActive?1:0,transition:'opacity 1.2s',pointerEvents:'none'}}/>
+      <div style={{position:'relative',width:480,height:480,margin:'0 auto 32px'}}>
+        {/* Background glow */}
+        <div style={{position:'absolute',inset:0,borderRadius:'50%',background:'radial-gradient(circle,rgba(56,182,255,0.07),transparent 65%)',opacity:diActive?1:0,transition:'opacity 1.2s',pointerEvents:'none'}}/>
 
-        {diNodes.map((node)=>(
-          <div key={node.key} style={{
-            position:'absolute',...node.pos,
-            width:108,height:108,
-            border:'1px solid var(--bord)',borderRadius:20,
-            background:'linear-gradient(135deg,var(--surf),rgba(10,16,24,0.95))',
-            display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:6,
-            boxShadow:diActive?'0 0 22px rgba(56,182,255,0.14)':'none',
-            transition:'box-shadow 0.8s',zIndex:2
-          }}>
-            {node.icon}
-            <span style={{fontSize:9,letterSpacing:2,color:'var(--muted)',fontFamily:"'JetBrains Mono',monospace",textTransform:'uppercase'}}>{node.label}</span>
-          </div>
-        ))}
+        {/* Static orbit path circle */}
+        <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none'}} viewBox="0 0 480 480">
+          <circle cx={CX} cy={CY} r={R} fill="none" stroke="rgba(56,182,255,0.12)" strokeWidth="1" strokeDasharray="5 8"/>
+        </svg>
 
-        <div style={{position:'relative',zIndex:3,width:172,height:172,borderRadius:'50%',overflow:'hidden',border:'1px solid rgba(56,182,255,0.35)',boxShadow:diActive?'0 0 48px rgba(56,182,255,0.22),0 0 80px rgba(56,182,255,0.08)':'none',transition:'box-shadow 1s',display:'flex',alignItems:'center',justifyContent:'center'}}>
-          <div style={{position:'absolute',inset:0,background:'radial-gradient(circle at 50% 50%, #000 0%, #041020 18%, #0a2a4a 36%, #0d5580 50%, #0e7db5 62%, #3aabcc 74%, #7acfe0 83%, #b0e5ef 91%, #e8f8ff 100%)'}}/>
+        {/* Rotating orbit group — contains SVG lines + icon cards */}
+        <div style={{
+          position:'absolute',inset:0,
+          animation:diActive?'diOrbit 28s linear infinite':'none',
+          transformOrigin:'center'
+        }}>
+          {/* SVG connecting lines — rotate with the orbit */}
+          <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none'}} viewBox="0 0 480 480">
+            <defs>
+              <filter id="diLGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            {/* Eye → each node */}
+            {nodePos.map((p,i)=>(
+              <line key={'c'+i} x1={CX} y1={CY} x2={p.x} y2={p.y}
+                stroke="rgba(56,182,255,0.55)" strokeWidth="1.2" filter="url(#diLGlow)"/>
+            ))}
+            {/* Node ↔ node (triangle) */}
+            {nodePos.map((p,i)=>{
+              const q=nodePos[(i+1)%3];
+              return <line key={'t'+i} x1={p.x} y1={p.y} x2={q.x} y2={q.y}
+                stroke="rgba(123,92,250,0.45)" strokeWidth="1" filter="url(#diLGlow)"/>;
+            })}
+          </svg>
+
+          {/* Icon cards — counter-rotate around their own center to stay upright */}
+          {diNodes.map((node,i)=>{
+            const p=nodePos[i];
+            return (
+              <div key={node.key} style={{
+                position:'absolute',
+                left:p.x-halfIcon, top:p.y-halfIcon,
+                width:iconSize, height:iconSize,
+                animation:diActive?'diOrbit 28s linear infinite reverse':'none',
+                transformOrigin:'center',
+                border:'1px solid rgba(56,182,255,0.3)',borderRadius:18,
+                background:'linear-gradient(135deg,var(--surf),rgba(10,16,24,0.95))',
+                display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:4,
+                boxShadow:diActive?'0 0 20px rgba(56,182,255,0.18)':'none',
+                transition:'box-shadow 0.8s',zIndex:2
+              }}>
+                {node.icon}
+                <span style={{fontSize:8,letterSpacing:2,color:'white',fontFamily:"'JetBrains Mono',monospace",textTransform:'uppercase'}}>{node.label}</span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Eye — fixed at center, not rotating */}
+        <div style={{
+          position:'absolute',
+          left:CX-86, top:CY-86,
+          width:172,height:172,borderRadius:'50%',
+          overflow:'hidden',border:'1px solid rgba(56,182,255,0.35)',
+          boxShadow:diActive?'0 0 48px rgba(56,182,255,0.22),0 0 80px rgba(56,182,255,0.08)':'none',
+          transition:'box-shadow 1s',
+          display:'flex',alignItems:'center',justifyContent:'center',zIndex:3
+        }}>
+          <div style={{position:'absolute',inset:0,background:'radial-gradient(circle at 50% 50%,#000 0%,#041020 18%,#0a2a4a 36%,#0d5580 50%,#0e7db5 62%,#3aabcc 74%,#7acfe0 83%,#b0e5ef 91%,#e8f8ff 100%)'}}/>
           {Array.from({length:18}).map((_,i)=>(
             <div key={i} style={{position:'absolute',width:'46%',height:1.5,background:'rgba(120,210,240,0.12)',transformOrigin:'0 50%',left:'50%',top:'50%',transform:`translateY(-50%) rotate(${i*20}deg)`}}/>
           ))}
-          <div style={{position:'relative',zIndex:2,width:50,height:50,borderRadius:'50%',background:'radial-gradient(circle, #000 55%, #041020 100%)',boxShadow:diActive?'0 0 20px rgba(56,182,255,0.5)':'none',transition:'box-shadow 1s',animation:diActive?'diPulse 3s ease-in-out infinite':'none'}}/>
+          <div style={{position:'relative',zIndex:2,width:50,height:50,borderRadius:'50%',background:'radial-gradient(circle,#000 55%,#041020 100%)',boxShadow:diActive?'0 0 20px rgba(56,182,255,0.5)':'none',transition:'box-shadow 1s',animation:diActive?'diPulse 3s ease-in-out infinite':'none'}}/>
         </div>
       </div>
 
@@ -4657,7 +4717,10 @@ function DigitalIntuitionBlock() {
         ))}
       </div>
 
-      <style>{`@keyframes diPulse{0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,182,255,0.45)}50%{transform:scale(1.14);box-shadow:0 0 32px rgba(56,182,255,0.75)}}`}</style>
+      <style>{`
+        @keyframes diPulse{0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,182,255,0.45)}50%{transform:scale(1.14);box-shadow:0 0 32px rgba(56,182,255,0.75)}}
+        @keyframes diOrbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+      `}</style>
     </div>
   );
 }
