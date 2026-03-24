@@ -3568,12 +3568,12 @@ function BitbonPriceWidget(){
       background:'rgba(56,182,255,.07)',border:'1px solid rgba(56,182,255,.2)',
       borderRadius:8,padding:'10px 20px',fontSize:13}}>
       <span style={{display:'flex',alignItems:'center',gap:6}}>
-        <span style={{width:7,height:7,borderRadius:'50%',background:'#38b6ff',
-          boxShadow:'0 0 8px rgba(56,182,255,.8)',
+        <span style={{width:7,height:7,borderRadius:'50%',background:'#22c55e',
+          boxShadow:'0 0 8px rgba(34,197,94,.8)',
           animation:'bbPulse 1.4s ease-in-out infinite'}}/>
         <span style={{color:'var(--muted)',fontFamily:"'JetBrains Mono',monospace",letterSpacing:1,fontSize:11}}>LIVE</span>
       </span>
-      <span style={{color:'var(--muted)',fontSize:12}}>Bitbon (BBT)</span>
+      <span style={{color:'var(--muted)',fontSize:12}}>Bitbon (ERBB)</span>
       {err&&<span style={{color:'var(--muted)',fontSize:12}}>—</span>}
       {!err&&!data&&<span style={{color:'var(--muted)',fontSize:12}}>...</span>}
       {data&&<>
