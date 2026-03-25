@@ -322,13 +322,18 @@ const G = `
     filter:drop-shadow(0 0 24px rgba(56,182,255,.5))}
   .hero-role{font-size:clamp(14px,2vw,18px);color:var(--muted);margin-top:16px;
     font-family:'JetBrains Mono',monospace;letter-spacing:1px;animation:fu .8s .2s ease both}
-  .hero-desc{max-width:580px;margin:24px auto 0;font-size:15px;
-    color:var(--txt);line-height:1.8;animation:fu .8s .3s ease both;opacity:.9}
+  .hero-desc{max-width:600px;margin:24px auto 0;font-size:clamp(18px,2.4vw,26px);
+    font-weight:700;line-height:1.4;
+    background:linear-gradient(90deg,#38b6ff,#a78bfa,#38b6ff,#60d0ff);
+    background-size:200% auto;
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    animation:fu .8s .3s ease both,heroShimmer 3s linear infinite}
+  @keyframes heroShimmer{to{background-position:200% center}}
   .hero-tags{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .35s ease both}
   .hero-tag{padding:6px 16px;border-radius:6px;font-size:13px;
-    color:var(--muted);border:1px solid rgba(56,182,255,.25);
-    background:rgba(56,182,255,.06);font-family:'JetBrains Mono',monospace;
+    color:#38b6ff;border:1px solid rgba(56,182,255,.4);
+    background:rgba(56,182,255,.08);font-family:'JetBrains Mono',monospace;
     letter-spacing:.5px}
   .hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .4s ease both}
