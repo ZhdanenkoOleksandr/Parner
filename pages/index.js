@@ -324,7 +324,13 @@ const G = `
     font-family:'JetBrains Mono',monospace;letter-spacing:1px;animation:fu .8s .2s ease both}
   .hero-desc{max-width:580px;margin:24px auto 0;font-size:15px;
     color:var(--txt);line-height:1.8;animation:fu .8s .3s ease both;opacity:.9}
-  .hero-btns{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;
+  .hero-tags{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;
+    justify-content:center;animation:fu .8s .35s ease both}
+  .hero-tag{padding:6px 16px;border-radius:6px;font-size:13px;
+    color:var(--muted);border:1px solid rgba(56,182,255,.25);
+    background:rgba(56,182,255,.06);font-family:'JetBrains Mono',monospace;
+    letter-spacing:.5px}
+  .hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .4s ease both}
   .hero-stats{display:flex;gap:52px;margin-top:72px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .55s ease both;
@@ -3619,12 +3625,15 @@ function HomePage({setPage}){
           BITBON<br/><span>SYSTEM</span>
         </h1>
         <p className="hero-desc">
-          Екосистема соціально-економічних відносин нового покоління.<br/>
-          Токенізація. Децентралізація. Репутація. Цифрова власність.
+          Екосистема соціально-економічних відносин
         </p>
+        <div className="hero-tags">
+          {['Токенізація','Децентралізація','Репутація','Цифрова власність'].map(t=>(
+            <span key={t} className="hero-tag">{t}</span>
+          ))}
+        </div>
         <div className="hero-btns">
           <button className="btn-p" onClick={()=>setPage('token')}>Купити Bitbon</button>
-          <button className="btn-o" onClick={()=>setPage('system')}>Дізнатись більше</button>
         </div>
         <BitbonPriceWidget/>
         <div className="hero-stats">
