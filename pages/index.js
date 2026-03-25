@@ -3858,8 +3858,9 @@ function TokenPage({setPage}){
   return(
     <div className="page">
       <section className="section">
-        <SectionHeader tag="Цифровий актив" title="Цифровий актив Bitbon"
-          sub="Право доступу до екосистеми через цифровий актив з обмеженою емісією та дефляційною моделлю"/>
+        <SectionHeader tag="Цифровий актив"
+          title={<>Цифровий актив <span style={{color:'var(--acc)'}}>Bitbon</span></>}
+          sub={<><span style={{color:'var(--acc)'}}>Право доступу</span> до екосистеми через цифровий актив з обмеженою емісією та дефляційною моделлю</>}/>
         <div className="token-layout">
           <div>
             <h3 style={{fontFamily:"'Bebas Neue',cursive",fontSize:36,color:'var(--white)',marginBottom:16,letterSpacing:1}}>
