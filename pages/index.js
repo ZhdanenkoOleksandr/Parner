@@ -3821,7 +3821,7 @@ const META_RESOURCES = [
 
 /* ═══════════ PERSONAL BRAND BLOCK ═══════════ */
 function PersonalBrandBlock({setPage}){
-  const [hoveredNode,setHoveredNode]=React.useState(null);
+  const [hoveredNode,setHoveredNode]=useState(null);
   const CX=340,CY=340,R=260;
   const nodes=[
     {icon:'🔒',text:'Персональні дані'},
