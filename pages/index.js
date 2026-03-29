@@ -3106,9 +3106,37 @@ const G = `
     cursor:default;
   }
   .pb-node:hover{
-    border-color:rgba(240,165,0,.45);
-    box-shadow:0 0 30px rgba(240,165,0,.15),0 4px 20px rgba(0,0,0,.4);
+    border-color:rgba(56,182,255,.55);
+    box-shadow:0 0 30px rgba(56,182,255,.2),0 4px 20px rgba(0,0,0,.4);
     transform:translate(var(--tx,0),var(--ty,0)) scale(1.06);
+  }
+  .pb-node-dropdown{
+    position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;gap:6px;
+    background:rgba(5,8,16,.97);
+    border:1px solid rgba(240,165,0,.28);
+    padding:12px 14px;
+    min-width:200px;
+    box-shadow:0 8px 32px rgba(240,165,0,.15),0 2px 16px rgba(0,0,0,.5);
+    z-index:100;
+    animation:pbDropIn .22s ease;
+    pointer-events:none;
+  }
+  @keyframes pbDropIn{from{opacity:0;transform:translateX(-50%) translateY(-8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+  .pb-node-dropdown-item{
+    display:flex;flex-direction:column;gap:3px;
+    padding:9px 12px;
+    background:rgba(240,165,0,.06);
+    border:1px solid rgba(240,165,0,.18);
+    border-left:3px solid rgba(240,165,0,.55);
+  }
+  .pb-node-dropdown-title{
+    font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:1px;color:#f0a500;font-weight:700;
+    text-transform:uppercase;white-space:nowrap;
+  }
+  .pb-node-dropdown-dash{
+    width:24px;height:1px;background:rgba(240,165,0,.3);margin:3px 0;
   }
   .pb-node-icon{font-size:18px;flex-shrink:0}
   .pb-node-text{
@@ -3793,6 +3821,7 @@ const META_RESOURCES = [
 
 /* ═══════════ PERSONAL BRAND BLOCK ═══════════ */
 function PersonalBrandBlock({setPage}){
+  const [hoveredNode,setHoveredNode]=useState(null);
   const CX=340,CY=340,R=260;
   const nodes=[
     {icon:'🔒',text:'Персональні дані'},
@@ -3871,10 +3900,28 @@ function PersonalBrandBlock({setPage}){
             if(Math.abs(p.x-CX)<10){style.transform=`translate(-50%,${isTop?'calc(-100% - 8px)':'8px'})`}
             else if(isLeft){style.transform=`translate(calc(-100% - 12px),${isTop?'-60%':'0%'})`}
             else{style.transform=`translate(12px,${isTop?'-60%':'0%'})`}
+            const isReputation=n.text==='Цифрова репутація';
             return(
-              <div className="pb-node" key={i} style={style}>
+              <div className="pb-node" key={i} style={style}
+                onMouseEnter={isReputation?()=>setHoveredNode(i):undefined}
+                onMouseLeave={isReputation?()=>setHoveredNode(null):undefined}
+              >
                 <span className="pb-node-icon">{n.icon}</span>
                 <span className="pb-node-text">{n.text}</span>
+                {isReputation&&hoveredNode===i&&(
+                  <div className="pb-node-dropdown">
+                    {[
+                      {title:'Личностный капитал'},
+                      {title:'Социальный капитал'},
+                      {title:'Общественный капитал'},
+                    ].map((item,j)=>(
+                      <div className="pb-node-dropdown-item" key={j}>
+                        <div className="pb-node-dropdown-title">{item.title}</div>
+                        <div className="pb-node-dropdown-dash"/>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
