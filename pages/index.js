@@ -797,18 +797,25 @@ const G = `
     filter:drop-shadow(0 0 24px rgba(56,182,255,.5))}
   .hero-role{font-size:clamp(14px,2vw,18px);color:var(--muted);margin-top:16px;
     font-family:'JetBrains Mono',monospace;letter-spacing:1px;animation:fu .8s .2s ease both}
-  .hero-desc{max-width:580px;margin:24px auto 0;font-size:15px;
-    color:var(--txt);line-height:1.8;animation:fu .8s .3s ease both;opacity:.9}
+  .hero-desc{
+    max-width:700px;margin:28px auto 0;
+    font-family:'Outfit',sans-serif;font-size:clamp(18px,2.4vw,28px);font-weight:700;
+    line-height:1.35;animation:fu .8s .3s ease both;
+    background:linear-gradient(90deg,#a8d8ff 0%,var(--acc) 35%,#fff 55%,var(--acc) 75%,#a8d8ff 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    animation:fu .8s .3s ease both,heroDescShimmer 4s linear infinite}
+  @keyframes heroDescShimmer{0%{background-position:200% center}100%{background-position:-200% center}}
   .hero-btns{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .4s ease both}
   .hero-chips{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .35s ease both}
   .hero-chip{
     padding:7px 18px;font-family:'JetBrains Mono',monospace;
-    font-size:11px;letter-spacing:1px;color:var(--white);
-    border:1px solid rgba(56,182,255,.22);background:rgba(56,182,255,.04);
-    transition:border-color .3s,background .3s,transform .3s}
-  .hero-chip:hover{border-color:rgba(56,182,255,.45);background:rgba(56,182,255,.08);transform:translateY(-2px)}
+    font-size:11px;letter-spacing:1px;color:var(--acc);
+    border:1px solid rgba(56,182,255,.32);background:rgba(56,182,255,.06);
+    transition:border-color .3s,background .3s,transform .3s,box-shadow .3s}
+  .hero-chip:hover{border-color:rgba(56,182,255,.6);background:rgba(56,182,255,.12);transform:translateY(-2px);box-shadow:0 0 14px rgba(56,182,255,.18)}
   .hero-ticker{
     display:inline-flex;align-items:center;gap:10px;margin-top:32px;
     padding:8px 20px;
