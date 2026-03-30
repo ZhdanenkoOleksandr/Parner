@@ -801,6 +801,31 @@ const G = `
     color:var(--txt);line-height:1.8;animation:fu .8s .3s ease both;opacity:.9}
   .hero-btns{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .4s ease both}
+  .hero-chips{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;
+    justify-content:center;animation:fu .8s .35s ease both}
+  .hero-chip{
+    padding:7px 18px;font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:1px;color:var(--white);
+    border:1px solid rgba(56,182,255,.22);background:rgba(56,182,255,.04);
+    transition:border-color .3s,background .3s,transform .3s}
+  .hero-chip:hover{border-color:rgba(56,182,255,.45);background:rgba(56,182,255,.08);transform:translateY(-2px)}
+  .hero-ticker{
+    display:inline-flex;align-items:center;gap:10px;margin-top:32px;
+    padding:8px 20px;
+    background:rgba(5,8,16,.7);border:1px solid rgba(56,182,255,.12);
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    animation:fu .8s .6s ease both;backdrop-filter:blur(8px)}
+  .hero-ticker-live{
+    display:flex;align-items:center;gap:6px;
+    color:#22c55e;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+  .hero-ticker-live::before{
+    content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;
+    box-shadow:0 0 8px #22c55e;animation:tickerPulse 1.5s ease-in-out infinite}
+  @keyframes tickerPulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hero-ticker-name{color:var(--muted);font-size:11px}
+  .hero-ticker-price{color:var(--white);font-weight:700;font-size:13px}
+  .hero-ticker-change{color:#ef4444;font-size:11px}
+  .hero-ticker-period{color:var(--muted);font-size:10px}
   .hero-stats{display:flex;gap:52px;margin-top:72px;flex-wrap:wrap;
     justify-content:center;animation:fu .8s .55s ease both;
     border-top:1px solid rgba(56,182,255,.1);padding-top:44px;
@@ -4082,11 +4107,22 @@ function HomePage({setPage, t}){
           BITBON<br/><span>SYSTEM</span>
         </h1>
         <p className="hero-desc">
-          {ph ? ph.heroDesc.split('\n').map((l,i)=><span key={i}>{l}{i===0&&<br/>}</span>) : <>Екосистема соціально-економічних відносин нового покоління.<br/>Токенізація. Децентралізація. Репутація. Цифрова власність.</>}
+          {ph ? ph.heroDesc.split('\n')[0] : 'Екосистема соціально-економічних відносин нового покоління.'}
         </p>
+        <div className="hero-chips">
+          {(ph && ph.chips ? ph.chips : ['Токенізація','Децентралізація','Репутація','Цифрова власність']).map((c,i)=>(
+            <div className="hero-chip" key={i}>{c}</div>
+          ))}
+        </div>
         <div className="hero-btns">
           <button className="btn-p" onClick={()=>setPage('token')}>{ph ? ph.buyBtn : 'Купити Bitbon'}</button>
-          <button className="btn-o" onClick={()=>setPage('system')}>{ph ? ph.learnBtn : 'Дізнатись більше'}</button>
+        </div>
+        <div className="hero-ticker">
+          <div className="hero-ticker-live">LIVE</div>
+          <div className="hero-ticker-name">Bitbon (ERBB)</div>
+          <div className="hero-ticker-price">$0.9518</div>
+          <div className="hero-ticker-change">▼ 5.65%</div>
+          <div className="hero-ticker-period">24h</div>
         </div>
         <div className="hero-stats">
           <div>
