@@ -2668,8 +2668,8 @@ const G = `
     cursor:default;
   }
   .pb-node:hover{
-    border-color:rgba(240,165,0,.45);
-    box-shadow:0 0 30px rgba(240,165,0,.15),0 4px 20px rgba(0,0,0,.4);
+    border-color:rgba(56,182,255,.55);
+    box-shadow:0 0 30px rgba(56,182,255,.22),0 4px 20px rgba(0,0,0,.4);
     transform:translate(var(--tx,0),var(--ty,0)) scale(1.06);
   }
   .pb-node-icon{font-size:18px;flex-shrink:0}
@@ -3355,6 +3355,7 @@ const META_RESOURCES = [
 
 /* ═══════════ PERSONAL BRAND BLOCK ═══════════ */
 function PersonalBrandBlock({setPage}){
+  const [hoveredNode,setHoveredNode]=useState(null);
   const CX=340,CY=340,R=260;
   const nodes=[
     {icon:'🔒',text:'Персональні дані'},
@@ -3434,10 +3435,36 @@ function PersonalBrandBlock({setPage}){
             if(Math.abs(p.x-CX)<10){style.transform=`translate(-50%,${isTop?'calc(-100% - 8px)':'8px'})`}
             else if(isLeft){style.transform=`translate(calc(-100% - 12px),${isTop?'-60%':'0%'})`}
             else{style.transform=`translate(12px,${isTop?'-60%':'0%'})`}
+            const isRep=i===1;
             return(
-              <div className="pb-node" key={i} style={style}>
+              <div className="pb-node" key={i} style={style}
+                onMouseEnter={()=>setHoveredNode(i)}
+                onMouseLeave={()=>setHoveredNode(null)}>
                 <span className="pb-node-icon">{n.icon}</span>
                 <span className="pb-node-text">{n.text}</span>
+                {isRep&&hoveredNode===1&&(
+                  <div style={{
+                    position:'absolute',top:'calc(100% + 8px)',
+                    left:'50%',transform:'translateX(-50%)',
+                    display:'flex',flexDirection:'column',gap:6,
+                    zIndex:30,minWidth:180
+                  }}>
+                    {[
+                      {label:'Особистісний капітал',color:'#f59e0b'},
+                      {label:'Соціальний капітал',color:'#d97706'},
+                      {label:'Суспільний капітал',color:'#b45309'},
+                    ].map((item,j)=>(
+                      <div key={j} style={{
+                        padding:'6px 12px',borderRadius:6,fontSize:11,
+                        fontFamily:"'JetBrains Mono',monospace",letterSpacing:.5,
+                        color:item.color,
+                        border:`1px solid ${item.color}55`,
+                        background:`${item.color}11`,
+                        whiteSpace:'nowrap',textAlign:'center'
+                      }}>{item.label}</div>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })}
