@@ -5785,7 +5785,7 @@ function ContactPage({setPage, showToast, t}){
       // Інструкція: GOOGLE-SHEETS-INTEGRATION.md
       // ═══════════════════════════════════════════════════════════════
       
-      const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxYOUR_DEPLOYMENT_ID/exec';
+      const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzLVL4E9n2lGFdUFi2UF1Mibcf_a-BAmcohLUu87WZ9yc31h8sgrafFYToyMPwGvMeGnA/exec';
       
       // Відправка в Google Sheets
       const response = await fetch(GOOGLE_SHEETS_URL, {
