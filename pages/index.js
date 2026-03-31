@@ -872,11 +872,47 @@ const G = `
       width:100%;
       max-width:100%;
     }
-    
+
     .hero-btns{
       flex-direction:column;
       width:100%;
     }
+  }
+
+  /* ── MOBILE NAV NAME HIDE ── */
+  .nav-name-right{display:block}
+  @media(max-width:768px){.nav-name-right{display:none}}
+
+  /* ── HERO MOBILE ── */
+  @media(max-width:600px){
+    .hero{padding:100px 20px 60px}
+    .hero-stats{gap:28px;margin-top:48px;padding-top:28px}
+    .hero-ticker{flex-wrap:wrap;justify-content:center;gap:6px 12px;padding:8px 14px}
+    .hero-chips{gap:8px}
+    .hero-chip{padding:6px 12px;font-size:10px}
+    .hero-ring,.hero-ring2,.hero-ring3{display:none}
+  }
+
+  /* ── DIGITAL INTUITION SYNERGY BLOCK MOBILE ── */
+  .di-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px;margin-bottom:32px}
+  @media(max-width:520px){
+    .di-visual{transform:scale(0.62);transform-origin:center center;min-height:240px;margin-bottom:-20px}
+  }
+  @media(max-width:380px){
+    .di-visual{transform:scale(0.5);min-height:200px;margin-bottom:-40px}
+  }
+
+  /* ── SECTION / GRID MOBILE ── */
+  @media(max-width:768px){
+    .section{padding:72px 24px}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    .roles-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:480px){
+    .section{padding:56px 16px}
+    .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .stat-n{font-size:clamp(28px,7vw,52px)}
   }
   .btn-o:hover{
     background:rgba(56,182,255,.1);color:var(--acc);
@@ -2705,7 +2741,6 @@ const G = `
   }
   @media(max-width:680px){
     .nav{padding:12px 20px}
-    .nav-links{display:none}
     .section{padding:60px 20px}
     .formula-wrap{padding:60px 20px}
     .home-sections{grid-template-columns:1fr}
@@ -2720,7 +2755,7 @@ const G = `
     .kpi-section{padding:60px 20px 80px}
     .kpi-row2{grid-template-columns:1fr}
     .form-grid{grid-template-columns:1fr}
-    footer{padding:28px 20px}
+    footer{padding:20px 20px}
     .epoch-compare{gap:20px}
   }
 
@@ -4022,7 +4057,7 @@ function Nav({page,setPage}){
           </span>
         ))}
       </div>
-      <div style={{flexShrink:0,textAlign:'right',display:'flex',alignItems:'center',gap:12}}>
+      <div className="nav-name-right" style={{flexShrink:0,textAlign:'right',display:'flex',alignItems:'center',gap:12}}>
         <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:16,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap'}}>
           OLEKSANDR ZHDANENKO
         </div>
@@ -4691,7 +4726,7 @@ function DigitalIntuitionBlock() {
         </p>
       </div>
 
-      <div style={{position:'relative',display:'flex',alignItems:'center',justifyContent:'center',minHeight:380,marginBottom:32}}>
+      <div className="di-visual">
         <div style={{position:'absolute',width:460,height:460,borderRadius:'50%',background:'radial-gradient(circle, rgba(56,182,255,0.07), transparent 65%)',opacity:diActive?1:0,transition:'opacity 1.2s',pointerEvents:'none'}}/>
 
         {diNodes.map((node)=>(
