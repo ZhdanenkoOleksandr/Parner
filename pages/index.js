@@ -4092,7 +4092,7 @@ function DigitalIntuitionBlock() {
 
         <div style={{
           position:'absolute',inset:0,
-          animation:diActive?'diOrbit 28s linear infinite':'none',
+          animation:diActive?'diOrbit 40s linear infinite':'none',
           transformOrigin:'center'
         }}>
           <svg style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none'}} viewBox="0 0 480 480">
@@ -4120,7 +4120,7 @@ function DigitalIntuitionBlock() {
                 position:'absolute',
                 left:p.x-halfIcon, top:p.y-halfIcon,
                 width:iconSize, height:iconSize,
-                animation:diActive?'diOrbit 28s linear infinite reverse':'none',
+                animation:diActive?'diOrbit 40s linear infinite reverse':'none',
                 transformOrigin:'center',
                 border:'1px solid rgba(56,182,255,0.3)',borderRadius:18,
                 background:'linear-gradient(135deg,var(--surf),rgba(10,16,24,0.95))',
