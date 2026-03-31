@@ -893,14 +893,27 @@ const G = `
     .hero-ring,.hero-ring2,.hero-ring3{display:none}
   }
 
-  /* ── DIGITAL INTUITION SYNERGY BLOCK MOBILE ── */
+  /* ── HOME + ONESPACE MOBILE CENTERING ── */
+  @media(max-width:768px){
+    .hs-card{text-align:center}
+    .hs-btn{margin:0 auto}
+    .sec-header{text-align:center}
+    .sec-sub{margin-left:auto;margin-right:auto}
+    .sec-tag{display:block;text-align:center}
+    .section{text-align:center}
+    .services-grid{grid-template-columns:1fr}
+    .home-sections{grid-template-columns:1fr}
+    .pb-manifesto-list{justify-content:center}
+    .pb-manifesto-text{text-align:center}
+    .pb-infra{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:480px){
+    .pb-infra{grid-template-columns:1fr}
+    .hero-label{font-size:9px;letter-spacing:2px;padding:5px 12px}
+  }
+
+  /* ── DIGITAL INTUITION SYNERGY BLOCK ── */
   .di-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px;margin-bottom:32px}
-  @media(max-width:520px){
-    .di-visual{transform:scale(0.62);transform-origin:center center;min-height:240px;margin-bottom:-20px}
-  }
-  @media(max-width:380px){
-    .di-visual{transform:scale(0.5);min-height:200px;margin-bottom:-40px}
-  }
 
   /* ── SECTION / GRID MOBILE ── */
   @media(max-width:768px){
@@ -3966,9 +3979,9 @@ function PersonalBrandBlock({setPage}){
                 {isReputation&&hoveredNode===i&&(
                   <div className="pb-node-dropdown">
                     {[
-                      {title:'Личностный капитал'},
-                      {title:'Социальный капитал'},
-                      {title:'Общественный капитал'},
+                      {title:'Особистий капітал'},
+                      {title:'Соціальний капітал'},
+                      {title:'Суспільний капітал'},
                     ].map((item,j)=>(
                       <div className="pb-node-dropdown-item" key={j}>
                         <div className="pb-node-dropdown-title">{item.title}</div>
@@ -4662,9 +4675,13 @@ function BitbonEcosystem({t}){
 /* ═══════════ DIGITAL INTUITION BLOCK ═══════════ */
 function DigitalIntuitionBlock() {
   const [diActive, setDiActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => setDiActive(true), 400);
-    return () => clearTimeout(timer);
+    const check = () => setIsMobile(window.innerWidth <= 600);
+    check();
+    window.addEventListener('resize', check);
+    return () => { clearTimeout(timer); window.removeEventListener('resize', check); };
   }, []);
 
   const diNodes = [
@@ -4712,23 +4729,81 @@ function DigitalIntuitionBlock() {
     }
   ];
 
+  const EyeCore = ()=>(
+    <div style={{width:isMobile?120:172,height:isMobile?120:172,borderRadius:'50%',overflow:'hidden',border:'1px solid rgba(56,182,255,0.35)',boxShadow:diActive?'0 0 48px rgba(56,182,255,0.22),0 0 80px rgba(56,182,255,0.08)':'none',transition:'box-shadow 1s',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',flexShrink:0}}>
+      <div style={{position:'absolute',inset:0,background:'radial-gradient(circle at 50% 50%, #000 0%, #041020 18%, #0a2a4a 36%, #0d5580 50%, #0e7db5 62%, #3aabcc 74%, #7acfe0 83%, #b0e5ef 91%, #e8f8ff 100%)'}}/>
+      {Array.from({length:18}).map((_,i)=>(
+        <div key={i} style={{position:'absolute',width:'46%',height:1.5,background:'rgba(120,210,240,0.12)',transformOrigin:'0 50%',left:'50%',top:'50%',transform:`translateY(-50%) rotate(${i*20}deg)`}}/>
+      ))}
+      <div style={{position:'relative',zIndex:2,width:isMobile?36:50,height:isMobile?36:50,borderRadius:'50%',background:'radial-gradient(circle, #000 55%, #041020 100%)',boxShadow:diActive?'0 0 20px rgba(56,182,255,0.5)':'none',transition:'box-shadow 1s',animation:diActive?'diPulse 3s ease-in-out infinite':'none'}}/>
+    </div>
+  );
+
+  const NodeCard = ({node})=>(
+    <div style={{
+      width:isMobile?'100%':108, minHeight:isMobile?72:108,
+      border:'1px solid var(--bord)',borderRadius:isMobile?12:20,
+      background:'linear-gradient(135deg,var(--surf),rgba(10,16,24,0.95))',
+      display:'flex',flexDirection:isMobile?'row':'column',
+      alignItems:'center',justifyContent:isMobile?'flex-start':'center',
+      gap:isMobile?16:6,padding:isMobile?'16px 20px':'12px 8px',
+      boxShadow:diActive?'0 0 22px rgba(56,182,255,0.14)':'none',
+      transition:'box-shadow 0.8s',
+    }}>
+      {node.icon}
+      <span style={{fontSize:isMobile?13:9,letterSpacing:isMobile?1:2,color:'var(--white)',fontFamily:"'JetBrains Mono',monospace",textTransform:'uppercase',fontWeight:isMobile?600:400}}>{node.label}</span>
+    </div>
+  );
+
+  const Header = ()=>(
+    <div style={{marginBottom:isMobile?32:48,textAlign:'center'}}>
+      <div style={{fontSize:11,fontFamily:"'JetBrains Mono',monospace",color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',fontWeight:700,marginBottom:10}}>▸ СИНЕРГІЯ СЕРВІСІВ</div>
+      <h2 style={{fontSize:isMobile?28:36,fontFamily:"'Bebas Neue',cursive",color:'var(--white)',marginBottom:12,letterSpacing:2}}>Цифрова інтуїція</h2>
+      <p style={{fontSize:13,color:'var(--muted)',maxWidth:460,margin:'0 auto',lineHeight:1.75}}>При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.</p>
+    </div>
+  );
+
+  const Tags = ()=>(
+    <div style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center',marginTop:isMobile?28:0}}>
+      {['Передбачення контексту','Контекстні сигнали','Швидкі рішення','Синергія сервісів'].map((f,i)=>(
+        <div key={i} style={{border:'1px solid var(--bord)',padding:'6px 14px',fontSize:11,color:'var(--acc)',fontFamily:"'JetBrains Mono',monospace",letterSpacing:1,background:'rgba(56,182,255,0.04)',borderRadius:2}}>{f}</div>
+      ))}
+    </div>
+  );
+
+  if(isMobile){
+    return(
+      <div style={{maxWidth:960,margin:'0 auto',padding:'0 16px 80px',textAlign:'center'}}>
+        <style>{`@keyframes diPulse{0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,182,255,0.45)}50%{transform:scale(1.14);box-shadow:0 0 32px rgba(56,182,255,0.75)}} @keyframes diRotateMob{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`}</style>
+        <Header/>
+        <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:0}}>
+          {/* Node 0 — Лінк */}
+          <NodeCard node={diNodes[0]}/>
+          {/* Connector line */}
+          <div style={{width:1,height:32,background:'linear-gradient(to bottom,rgba(56,182,255,0.4),rgba(56,182,255,0.15))',flexShrink:0}}/>
+          {/* Eye */}
+          <EyeCore/>
+          {/* Connector line */}
+          <div style={{width:1,height:32,background:'linear-gradient(to bottom,rgba(56,182,255,0.15),rgba(56,182,255,0.4))',flexShrink:0}}/>
+          {/* Node 1 — Пінг */}
+          <NodeCard node={diNodes[1]}/>
+          {/* Connector line */}
+          <div style={{width:1,height:32,background:'linear-gradient(to bottom,rgba(56,182,255,0.4),rgba(56,182,255,0.15))',flexShrink:0}}/>
+          {/* Node 2 — Аура */}
+          <NodeCard node={diNodes[2]}/>
+        </div>
+        <Tags/>
+      </div>
+    );
+  }
+
   return (
     <div style={{maxWidth:960,margin:'0 auto',padding:'0 24px 80px',textAlign:'center'}}>
-      <div style={{marginBottom:48}}>
-        <div style={{fontSize:11,fontFamily:"'JetBrains Mono',monospace",color:'var(--acc)',letterSpacing:2,textTransform:'uppercase',fontWeight:700,marginBottom:10}}>
-          ▸ СИНЕРГІЯ СЕРВІСІВ
-        </div>
-        <h2 style={{fontSize:36,fontFamily:"'Bebas Neue',cursive",color:'var(--white)',marginBottom:12,letterSpacing:2}}>
-          Цифрова інтуїція
-        </h2>
-        <p style={{fontSize:13,color:'var(--muted)',maxWidth:460,margin:'0 auto',lineHeight:1.75}}>
-          При об'єднанні сервісів виникає ефект, який неможливо отримати окремо.
-        </p>
-      </div>
+      <style>{`@keyframes diPulse{0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,182,255,0.45)}50%{transform:scale(1.14);box-shadow:0 0 32px rgba(56,182,255,0.75)}}`}</style>
+      <Header/>
 
       <div className="di-visual">
         <div style={{position:'absolute',width:460,height:460,borderRadius:'50%',background:'radial-gradient(circle, rgba(56,182,255,0.07), transparent 65%)',opacity:diActive?1:0,transition:'opacity 1.2s',pointerEvents:'none'}}/>
-
         {diNodes.map((node)=>(
           <div key={node.key} style={{
             position:'absolute',...node.pos,
@@ -4743,23 +4818,10 @@ function DigitalIntuitionBlock() {
             <span style={{fontSize:9,letterSpacing:2,color:'var(--muted)',fontFamily:"'JetBrains Mono',monospace",textTransform:'uppercase'}}>{node.label}</span>
           </div>
         ))}
-
-        <div style={{position:'relative',zIndex:3,width:172,height:172,borderRadius:'50%',overflow:'hidden',border:'1px solid rgba(56,182,255,0.35)',boxShadow:diActive?'0 0 48px rgba(56,182,255,0.22),0 0 80px rgba(56,182,255,0.08)':'none',transition:'box-shadow 1s',display:'flex',alignItems:'center',justifyContent:'center'}}>
-          <div style={{position:'absolute',inset:0,background:'radial-gradient(circle at 50% 50%, #000 0%, #041020 18%, #0a2a4a 36%, #0d5580 50%, #0e7db5 62%, #3aabcc 74%, #7acfe0 83%, #b0e5ef 91%, #e8f8ff 100%)'}}/>
-          {Array.from({length:18}).map((_,i)=>(
-            <div key={i} style={{position:'absolute',width:'46%',height:1.5,background:'rgba(120,210,240,0.12)',transformOrigin:'0 50%',left:'50%',top:'50%',transform:`translateY(-50%) rotate(${i*20}deg)`}}/>
-          ))}
-          <div style={{position:'relative',zIndex:2,width:50,height:50,borderRadius:'50%',background:'radial-gradient(circle, #000 55%, #041020 100%)',boxShadow:diActive?'0 0 20px rgba(56,182,255,0.5)':'none',transition:'box-shadow 1s',animation:diActive?'diPulse 3s ease-in-out infinite':'none'}}/>
-        </div>
+        <div style={{position:'relative',zIndex:3}}><EyeCore/></div>
       </div>
 
-      <div style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center'}}>
-        {['Передбачення контексту','Контекстні сигнали','Швидкі рішення','Синергія сервісів'].map((f,i)=>(
-          <div key={i} style={{border:'1px solid var(--bord)',padding:'6px 14px',fontSize:11,color:'var(--acc)',fontFamily:"'JetBrains Mono',monospace",letterSpacing:1,background:'rgba(56,182,255,0.04)',borderRadius:2}}>{f}</div>
-        ))}
-      </div>
-
-      <style>{`@keyframes diPulse{0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(56,182,255,0.45)}50%{transform:scale(1.14);box-shadow:0 0 32px rgba(56,182,255,0.75)}}`}</style>
+      <Tags/>
     </div>
   );
 }
