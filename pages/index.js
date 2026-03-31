@@ -421,23 +421,11 @@ function useMobileMenu(){
 
 /* ─────────── LANGUAGE HOOK ─────────── */
 function useLanguage() {
-  const [lang, setLang] = useState(() => {
-    if (typeof window === 'undefined') return 'uk';
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    if (urlLang && ['uk', 'en', 'ru'].includes(urlLang)) return urlLang;
-    const saved = localStorage.getItem('preferred-language');
-    if (saved && ['uk', 'en', 'ru'].includes(saved)) return saved;
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('uk')) return 'uk';
-    if (browserLang.startsWith('ru')) return 'ru';
-    return 'uk';
-  });
+  const [lang, setLang] = useState('uk');
   useEffect(() => {
-    localStorage.setItem('preferred-language', lang);
-    document.documentElement.lang = lang;
-  }, [lang]);
-  return [lang, setLang, translations[lang]];
+    document.documentElement.lang = 'uk';
+  }, []);
+  return [lang, setLang, translations['uk']];
 }
 
 /* ─────────── LANGUAGE SWITCHER ─────────── */
@@ -1207,10 +1195,10 @@ const G = `
 
   /* ── FOOTER ── */
   footer{
-    border-top:1px solid var(--bord);padding:36px 48px;
+    border-top:1px solid var(--bord);padding:16px 48px;
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
     position:relative;z-index:1;
-    background:linear-gradient(180deg,transparent,rgba(5,8,16,.5))}
+    background:rgba(5,8,16,.97);min-height:56px}
   footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
     width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--acc),transparent)}
   .f-logo{font-family:'Bebas Neue',cursive;font-size:28px;
@@ -4015,12 +4003,9 @@ function Nav({page,setPage}){
           <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
           <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
         </div>
-        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:4,lineHeight:1}}>
-          {t && t.pages ? t.pages.nav.partner : 'ПАРТНЕР'}
-        </div>
       </div>
-      
-        <button 
+
+        <button
           className={`nav-toggle ${mobileMenuOpen?'open':''}`}
           onClick={()=>setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -4029,7 +4014,7 @@ function Nav({page,setPage}){
           <span></span>
           <span></span>
         </button>
-        
+
         <div className={`nav-links ${mobileMenuOpen?'open':''}`}>
         {PAGES.filter(p=>p!=='home').map(p=>(
           <span key={p} className={`nav-link${page===p?' active':''}`} onClick={()=>{setPage(p);setMobileMenuOpen(false);}}>
@@ -4038,21 +4023,13 @@ function Nav({page,setPage}){
         ))}
       </div>
       <div style={{flexShrink:0,textAlign:'right',display:'flex',alignItems:'center',gap:12}}>
-        <LanguageSwitcher lang={lang} setLang={setLang}/>
-        <div>
-          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap',cursor:'pointer'}} onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
-            Oleksandr Zhdanenko
-          </div>
-          <div style={{marginTop:4,display:'flex',justifyContent:'flex-end'}}>
-            <button className="nav-cta" onClick={()=>{setPage('contact');setMobileMenuOpen(false);}}>
-              {t ? t.nav.consultation : 'Консультація'}
-            </button>
-          </div>
+        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:16,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap'}}>
+          OLEKSANDR ZHDANENKO
         </div>
       </div>
     </nav>
-      
-      <div 
+
+      <div
         className={`nav-overlay ${mobileMenuOpen?'open':''}`}
         onClick={()=>setMobileMenuOpen(false)}
       />
@@ -6122,24 +6099,12 @@ export default function App(){
         {renderPage()}
       </div>
       <footer>
-        <div>
-          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,lineHeight:1,whiteSpace:'nowrap'}}>
-            <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
-            <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
-          </div>
-          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',marginTop:6,lineHeight:1}}>
-            {fp ? fp.partner : 'ПАРТНЕР'}
-          </div>
+        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,lineHeight:1,whiteSpace:'nowrap'}}>
+          <span style={{color:'var(--white)',fontWeight:900}}>BITBON</span>{' '}
+          <span style={{color:'var(--acc)',fontWeight:900}}>SYSTEM</span>
         </div>
-        <div style={{textAlign:'right'}}>
-          <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:20,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap'}}>
-            Oleksandr Zhdanenko
-          </div>
-          <div style={{marginTop:6,display:'flex',justifyContent:'flex-end'}}>
-            <button className="nav-cta" onClick={()=>goTo('contact')}>
-              {fp ? fp.consultation : 'Консультація'}
-            </button>
-          </div>
+        <div style={{fontFamily:"'Bebas Neue',cursive",fontSize:16,letterSpacing:3,color:'var(--white)',fontWeight:900,lineHeight:1,whiteSpace:'nowrap'}}>
+          OLEKSANDR ZHDANENKO
         </div>
       </footer>
       <div className={`toast${toast?' show':''}`}>{t ? t.form.success : "✓ Заявку надіслано! Очікуйте зв'язку."}</div>
