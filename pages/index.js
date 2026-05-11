@@ -3102,22 +3102,22 @@ const G = `
     display:flex;align-items:center;gap:10px;
     white-space:nowrap;
     backdrop-filter:blur(12px);
-    transition:border-color .4s,box-shadow .4s,transform .4s;
+    transition:border-color .3s,box-shadow .3s,background .3s;
     cursor:default;
   }
   .pb-node:hover{
-    border-color:rgba(56,182,255,.55);
-    box-shadow:0 0 30px rgba(56,182,255,.2),0 4px 20px rgba(0,0,0,.4);
-    transform:translate(var(--tx,0),var(--ty,0)) scale(1.06);
+    border-color:rgba(56,182,255,.72);
+    box-shadow:0 0 0 1px rgba(56,182,255,.22),0 0 28px rgba(56,182,255,.35),0 4px 20px rgba(0,0,0,.5);
+    background:rgba(10,18,28,.98);
   }
   .pb-node-dropdown{
     position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
     display:flex;flex-direction:column;gap:6px;
     background:rgba(5,8,16,.97);
-    border:1px solid rgba(240,165,0,.28);
+    border:1px solid rgba(56,182,255,.28);
     padding:12px 14px;
-    min-width:200px;
-    box-shadow:0 8px 32px rgba(240,165,0,.15),0 2px 16px rgba(0,0,0,.5);
+    min-width:220px;
+    box-shadow:0 8px 32px rgba(56,182,255,.18),0 2px 16px rgba(0,0,0,.5);
     z-index:100;
     animation:pbDropIn .22s ease;
     pointer-events:none;
@@ -3126,17 +3126,17 @@ const G = `
   .pb-node-dropdown-item{
     display:flex;flex-direction:column;gap:3px;
     padding:9px 12px;
-    background:rgba(240,165,0,.06);
-    border:1px solid rgba(240,165,0,.18);
-    border-left:3px solid rgba(240,165,0,.55);
+    background:rgba(56,182,255,.06);
+    border:1px solid rgba(56,182,255,.18);
+    border-left:3px solid rgba(56,182,255,.6);
   }
   .pb-node-dropdown-title{
     font-family:'JetBrains Mono',monospace;font-size:10px;
-    letter-spacing:1px;color:#f0a500;font-weight:700;
+    letter-spacing:1px;color:#38b6ff;font-weight:700;
     text-transform:uppercase;white-space:nowrap;
   }
   .pb-node-dropdown-dash{
-    width:24px;height:1px;background:rgba(240,165,0,.3);margin:3px 0;
+    width:24px;height:1px;background:rgba(56,182,255,.3);margin:3px 0;
   }
   .pb-node-icon{font-size:18px;flex-shrink:0}
   .pb-node-text{
@@ -3902,7 +3902,7 @@ function PersonalBrandBlock({setPage}){
             else{style.transform=`translate(12px,${isTop?'-60%':'0%'})`}
             const isReputation=n.text==='Цифрова репутація';
             return(
-              <div className="pb-node" key={i} style={style}
+              <div className="pb-node" key={i} style={{...style,cursor:isReputation?'pointer':'default'}}
                 onMouseEnter={isReputation?()=>setHoveredNode(i):undefined}
                 onMouseLeave={isReputation?()=>setHoveredNode(null):undefined}
               >
@@ -3911,9 +3911,9 @@ function PersonalBrandBlock({setPage}){
                 {isReputation&&hoveredNode===i&&(
                   <div className="pb-node-dropdown">
                     {[
-                      {title:'Личностный капитал'},
-                      {title:'Социальный капитал'},
-                      {title:'Общественный капитал'},
+                      {title:'Особистісний капітал'},
+                      {title:'Соціальний капітал'},
+                      {title:'Суспільний капітал'},
                     ].map((item,j)=>(
                       <div className="pb-node-dropdown-item" key={j}>
                         <div className="pb-node-dropdown-title">{item.title}</div>
