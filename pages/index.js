@@ -6047,10 +6047,27 @@ function ContactPage({setPage, showToast, t}){
 }
 
 /* ═══════════ ROOT APP ═══════════ */
+const VALID_PAGES=['home','system','token','onespace','metaresources','cases','contact'];
+function pageFromHash(){
+  if(typeof window==='undefined') return 'home';
+  const h=window.location.hash.replace('#','');
+  return VALID_PAGES.includes(h)?h:'home';
+}
+
 export default function App(){
   const [lang, setLang, t] = useLanguage();
-  const [page,setPage]=useState('home');
+  const [page,setPage]=useState(pageFromHash);
   const [toast,setToast]=useState(false);
+
+  useEffect(()=>{
+    window.location.hash=page==='home'?'':page;
+  },[page]);
+
+  useEffect(()=>{
+    function onHash(){setPage(pageFromHash());}
+    window.addEventListener('hashchange',onHash);
+    return ()=>window.removeEventListener('hashchange',onHash);
+  },[]);
 
   function goTo(p){setPage(p);window.scrollTo({top:0,behavior:'smooth'});}
   function showToast(){setToast(true);setTimeout(()=>setToast(false),3500);}
